@@ -33,31 +33,74 @@ function prevStep(stepNumber) {
     showStep(stepNumber);
 }
 
-// Search Functionality
-document.getElementById('search-btn').addEventListener('click', performSearch);
-document.getElementById('site-search').addEventListener('keypress', function (e) {
+// ==========================================
+// SEARCH FUNCTIONALITY (Tags + Highlight)
+// ==========================================
+let searchTags = [];
+
+const searchInput = document.getElementById('site-search');
+const searchBtn = document.getElementById('search-btn');
+const searchContainer = document.getElementById('search-input-container');
+
+searchBtn.addEventListener('click', addSearchTag);
+searchInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        performSearch();
+        addSearchTag();
     }
 });
 
-function performSearch() {
-    const query = document.getElementById('site-search').value.trim();
-    if (!query) return;
+function addSearchTag() {
+    const term = searchInput.value.trim();
+    if (!term) return;
 
-    // Remove existing highlights
+    // Avoid duplicates
+    if (!searchTags.includes(term.toLowerCase())) {
+        searchTags.push(term.toLowerCase());
+        renderTags();
+        highlightTerms();
+    }
+    
+    searchInput.value = ''; // Clear input
+}
+
+function removeTag(term) {
+    searchTags = searchTags.filter(t => t !== term);
+    renderTags();
+    highlightTerms();
+}
+
+function renderTags() {
+    // Remove existing tags from DOM (keep the input)
+    const existingTags = searchContainer.querySelectorAll('.search-tag');
+    existingTags.forEach(tag => tag.remove());
+
+    // Add tags before the input
+    searchTags.forEach(term => {
+        const tag = document.createElement('span');
+        tag.className = 'search-tag';
+        const escapedTerm = term.replace(/'/g, "\\'");
+        tag.innerHTML = `${term} <span class="search-tag-close" onclick="removeTag('${escapedTerm}')">×</span>`;
+        searchContainer.insertBefore(tag, searchInput);
+    });
+}
+
+function highlightTerms() {
+    // 1. Remove existing highlights
     const marks = document.querySelectorAll('mark');
     marks.forEach(mark => {
         const parent = mark.parentNode;
         parent.replaceChild(document.createTextNode(mark.textContent), mark);
-        parent.normalize(); // Merge text nodes
+        parent.normalize();
     });
 
-    if (query === "") return;
+    if (searchTags.length === 0) return;
 
-    const regex = new RegExp(`(${query})`, 'gi');
+    // 2. Create Regex for all terms
+    // Escape special regex chars
+    const escapedTerms = searchTags.map(t => t.replace(/[.*+?^${}()|[\\]/g, '\\$&'));
+    const regex = new RegExp(`(${escapedTerms.join('|')})`, 'gi');
     
-    // Helper to traverse text nodes
+    // 3. Helper to traverse text nodes
     function traverse(element) {
         if (element.nodeType === 3) { // Text node
             const text = element.nodeValue;
@@ -66,8 +109,8 @@ function performSearch() {
                 span.innerHTML = text.replace(regex, '<mark>$1</mark>');
                 element.parentNode.replaceChild(span, element);
             }
-        } else if (element.nodeType === 1 && element.nodeName !== 'SCRIPT' && element.nodeName !== 'STYLE') {
-            // Recurse element nodes, ignore scripts/styles
+        } else if (element.nodeType === 1 && element.nodeName !== 'SCRIPT' && element.nodeName !== 'STYLE' && element.nodeName !== 'MARK') {
+            // Recurse element nodes, ignore scripts/styles/marks
             Array.from(element.childNodes).forEach(child => traverse(child));
         }
     }
@@ -76,74 +119,53 @@ function performSearch() {
     const container = document.querySelector('main');
     traverse(container);
 
-    // Scroll to first match
-    const firstMatch = document.querySelector('mark');
-    if (firstMatch) {
-        // If the match is in a hidden step, we might need to show it?
-        // For now, let's assume search is most useful on the current visible page or we just highlight.
-        // If we want to be fancy, we find which step the match is in and switch to it.
-        const step = firstMatch.closest('.step');
-        if (step && !step.classList.contains('active-step')) {
-            // Find step number
-            const stepId = step.id; // step-X
-            const stepNum = parseInt(stepId.split('-')[1]);
-            showStep(stepNum);
-        }
-        firstMatch.scrollIntoView({behavior: 'smooth', block: 'center'});
-    } else {
-        alert('No matches found.');
-    }
+    // Scroll to first match if new tag added (optional, might jump around too much if multiple tags)
+    // For now, let's just highlight.
 }
 
 
-// Quiz Logic
-function checkQuizAndNext() {
+// ==========================================
+// QUIZ LOGIC
+// ==========================================
+function checkQuiz() {
     const form = document.getElementById('quiz-form');
     const questions = form.querySelectorAll('.quiz-question');
-    let allAnswered = true; // Optional: enforce answering
 
     questions.forEach(q => {
         const qId = q.dataset.qid;
         const selected = q.querySelector('input:checked');
-        const feedback = q.querySelector('.feedback');
+        const feedbackEl = q.querySelector('.feedback');
         
         // Reset classes
-        feedback.className = 'feedback hidden';
-        feedback.innerHTML = '';
+        feedbackEl.className = 'feedback hidden';
+        feedbackEl.innerHTML = '';
 
         if (selected) {
             const val = selected.value;
+            const feedbackText = selected.getAttribute('data-feedback');
+            
             // Store result
             quizResults[qId] = (val === 'correct');
 
-            feedback.classList.remove('hidden');
+            feedbackEl.classList.remove('hidden');
+            feedbackEl.innerHTML = feedbackText; // Use the specific text provided
+
             if (val === 'correct') {
-                feedback.classList.add('correct');
-                feedback.innerHTML = '<strong>Correct!</strong>';
+                feedbackEl.classList.add('correct');
             } else {
-                feedback.classList.add('incorrect');
-                // We could add specific feedback text from PDF if available, 
-                // but PDF essentially says "Incorrect: Reason" for each option. 
-                // A generic explanation or the correct reason would be better.
-                // For simplicity/time, we just indicate status or generic correction.
-                // Let's look at the PDF content again...
-                // The PDF lists specific responses for Incorrect options.
-                // Implementing specific feedback for every wrong option is complex data entry.
-                // I will just mark it Incorrect for now or show a generic "Review the facts" message.
-                // Actually, the summary logic relies on *correct* answers.
-                feedback.innerHTML = '<strong>Incorrect.</strong> Review the facts section if needed.';
+                feedbackEl.classList.add('incorrect');
             }
         } else {
             // Not answered
             quizResults[qId] = false;
         }
     });
-    
-    // Move to next step
-    nextStep(4);
 }
 
-// Summary Generation
+
+// ==========================================
+// SUMMARY GENERATION
+// ==========================================
 function generateSummary() {
     // 1. Gather Values (Sliders)
     const sliders = [
@@ -164,21 +186,8 @@ function generateSummary() {
     sliders.forEach(item => {
         const val = document.getElementById(item.id).value;
         const p = document.createElement('p');
-        // Simple visualization of the preference
-        let preferenceText = '';
-        if (val < 40) preferenceText = `Prefers: ${item.left}`;
-        else if (val > 60) preferenceText = `Prefers: ${item.right}`;
-        else preferenceText = 'Neutral / Balanced';
-
-        p.innerHTML = `<strong>${item.label}:</strong> ${val}% towards Human side (0=AI, 100=Human). <br> <em>${preferenceText}</em>`; 
-        // Wait, my HTML range is 0-100.
-        // Left label (0) is usually AI in my HTML structure?
-        // Let's check HTML:
-        // Left: "I want AI..." -> 0
-        // Right: "I prefer only human..." -> 100
-        // So 0 = AI, 100 = Human.
         
-        // Re-mapping text for clarity
+        let preferenceText = '';
         if (val < 40) preferenceText = "Leans towards accepting AI use";
         else if (val > 60) preferenceText = "Leans towards Human-only care";
         else preferenceText = "Undecided / Neutral";

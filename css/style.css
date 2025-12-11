@@ -43,23 +43,38 @@ body {
     color: var(--primary-color);
 }
 
-.search-container {
+/* Search Area */
+.search-wrapper {
     display: flex;
     align-items: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 20px 0 0 20px;
+    padding: 2px 10px;
+    background: white;
+    flex-grow: 1;
+    min-height: 30px;
 }
 
 #site-search {
-    padding: 4px 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 20px 0 0 20px;
+    border: none;
     outline: none;
-    height: 30px; /* Thinner as requested */
+    flex-grow: 1;
     font-size: 0.9rem;
-    width: 200px;
+    min-width: 100px;
+    height: 24px;
+    margin: 2px 0;
 }
 
 #search-btn {
-    height: 30px;
+    height: 36px; /* Adjusted to match container min-height + padding/border approximations */
     padding: 0 12px;
     border: 1px solid var(--border-color);
     border-left: none;
@@ -72,6 +87,29 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* Search Tags */
+.search-tag {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.search-tag-close {
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+}
+
+.search-tag-close:hover {
+    color: #333;
+}
+
 
 /* Container */
 .container {
@@ -101,6 +139,7 @@ body {
     color: #777;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    cursor: pointer; /* Clickable */
 }
 
 .progressbar li:before {
@@ -448,22 +487,23 @@ mark {
 
 /* Footer */
 .main-footer {
-    background-color: #333;
-    color: #ccc;
+    color: #333;
     padding: 40px 0;
     margin-top: 60px;
     font-size: 0.85rem;
+    border-top: 1px solid #ddd;
 }
 
 .main-footer a {
-    color: white;
+    color: var(--primary-color);
 }
 
 .references-list {
-    background: #444;
+    background: white; /* White background for readability */
     padding: 15px;
     margin-top: 10px;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 /* Printing */
