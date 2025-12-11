@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Should AI Be Involved In My Medical Care? - Patient Decision Aid</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <h1 class="logo">AI in Healthcare Decision Aid</h1>
+            <div class="search-container">
+                <input type="text" id="site-search" placeholder="Search key terms...">
+                <button id="search-btn" aria-label="Search">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <ul class="progressbar">
+                <li class="active">Get The Facts</li>
+                <li>Your Feelings</li>
+                <li>Quiz Yourself</li>
+                <li>Your Decision</li>
+                <li>Summary</li>
+            </ul>
+        </div>
+
+        <!-- STEP 1: Get The Facts -->
+        <section id="step-1" class="step active-step">
+            <h2>Step 1: Get The Facts</h2>
+            
+            <div class="intro-box">
+                <h3>Should AI Be Involved In My Medical Care?</h3>
+                <p>Artificial intelligence, or AI, is a tool that is seeing increased use in healthcare to help medical professionals take notes, make decisions, plan treatments, and more. While AI can be helpful, it is not perfect and it’s important for you to know when and how it is being used in your care.</p>
+                <p>You have the right to understand how AI might affect your health and to decide whether or not you want it to be part of your care. This tool will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Your Options</h3>
+                <ol>
+                    <li><strong>Agree</strong> to the use of AI in your medical care in full.</li>
+                    <li><strong>Request</strong> that AI tools are not used for certain aspects of your care (ex: taking notes, diagnostic help, etc).</li>
+                    <li><strong>Deny</strong> AI use in your care.</li>
+                </ol>
+                <p class="note">Some healthcare facilities let patients choose when and how AI is used in their care, but not all do. Knowing your options and how you feel about AI can help you avoid situations where tools you don’t want are used without you knowing.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>What is AI?</h3>
+                <p>You have probably heard about artificial intelligence, or AI, especially as it becomes more common in healthcare. AI is a type of computer technology that can learn and make decisions like a human. AI allows computers to do things that would otherwise need the human brain.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>How Do AI Tools Work?</h3>
+                <p>AI tools use computer programs called algorithms to find patterns in large amounts of data. They are trained on this information and learn from it to make predictions and suggestions. AI developers follow six general steps when creating AI:</p>
+                <ol>
+                    <li>Decide what AI should do</li>
+                    <li>Gather information the AI will learn from</li>
+                    <li>Teach the computer to find patterns in the data</li>
+                    <li>Check if the tool works well</li>
+                    <li>Put AI into real use to help people</li>
+                    <li>Keep checking the tool and make updates over time</li>
+                </ol>
+            </div>
+
+            <div class="content-block">
+                <h3>Common Uses of AI in Medicine</h3>
+                <p>AI has been used in healthcare more and more since 2017. Below are some common ways it helps doctors and patients today:</p>
+                
+                <div class="accordion">
+                    <details>
+                        <summary>1. Helping doctors find and monitor health problems</summary>
+                        <ul>
+                            <li>Detect early signs of disease from lab results or medical images.</li>
+                            <li>Help read X-rays, CT scans, MRIs, heart tests, and other imaging results to spot issues faster.</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>2. Supporting diagnosis and treatment decisions</summary>
+                        <ul>
+                            <li>Suggest possible diagnoses based on medical information.</li>
+                            <li>Offer treatment options that follow medical recommendations.</li>
+                            <li>Predict health risks, like complications, to help doctors plan the best care.</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>3. Making medical notes and visit summaries</summary>
+                        <ul>
+                            <li>Turn doctors’ or patients’ speech into written visit summaries.</li>
+                            <li>Write drafts of clinical notes and hospital discharge summaries.</li>
+                            <li>Organize and update patient medical records more quickly.</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>4. Reducing paperwork and administrative work</summary>
+                        <ul>
+                            <li>Suggest correct billing and insurance codes.</li>
+                            <li>Help order lab tests and/or medications more efficiently.</li>
+                            <li>Decrease time spent on forms so doctors can focus more on patients.</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>5. Helping patients stay organized and involved in their care</summary>
+                        <ul>
+                            <li>Send appointment reminders and follow-up messages.</li>
+                            <li>Collect pre-visit information through virtual assistants or online forms.</li>
+                            <li>Translation of medical information for non-English speakers.</li>
+                            <li>Provide simple explanations or instructions to patients.</li>
+                            <li>Help patients manage medications and track symptoms at home.</li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+
+            <div class="cols-2">
+                <div class="content-block success-block">
+                    <h3>Benefits of AI</h3>
+                    <h4>Helps Doctors Do Their Jobs</h4>
+                    <ul>
+                        <li>Gives clear and organized answers</li>
+                        <li>Helps doctors think through medical problems</li>
+                        <li>Can help with diagnosing illnesses</li>
+                        <li>Works well for reading medical images, like X-rays</li>
+                        <li>Can reduce human-error mistakes</li>
+                    </ul>
+                    <h4>Helps Patients</h4>
+                    <ul>
+                        <li>Explains medical information in simple ways</li>
+                        <li>Makes it easier for doctors and patients to talk</li>
+                        <li>Can help with many languages</li>
+                        <li>Supports more personalized care</li>
+                    </ul>
+                    <h4>Saves Time and Energy</h4>
+                    <ul>
+                        <li>Helps with writing medical notes</li>
+                        <li>Makes reports, like radiology reports, easier to read</li>
+                        <li>Helps clinics run more smoothly</li>
+                        <li>Can save staff time and hospital resources</li>
+                    </ul>
+                </div>
+
+                <div class="content-block warning-block">
+                    <h3>Potential Harms and Risks of AI</h3>
+                    <h4>Accuracy Problems</h4>
+                    <ul>
+                        <li>AI learns from data, which can include bias</li>
+                        <li>May not work well for rare or complex cases</li>
+                        <li>Can give answers that are partly wrong or incomplete</li>
+                        <li>Gets less accurate with harder questions</li>
+                        <li>Accuracy levels can be inconsistent</li>
+                    </ul>
+                    <h4>Missing Human Qualities</h4>
+                    <ul>
+                        <li>Does not understand feelings</li>
+                        <li>Could lead to less human involvement if overused</li>
+                        <li>Still needs doctors to check its work</li>
+                    </ul>
+                    <h4>Technology Challenges</h4>
+                    <ul>
+                        <li>Sometimes it’s hard to know how AI makes decisions (“black box”)</li>
+                        <li>Quality of answers can change from case to case</li>
+                        <li>Hard to fit it smoothly into busy health systems</li>
+                    </ul>
+                    <h4>Fairness and Access</h4>
+                    <ul>
+                        <li>Could make gaps worse if some groups have less access to technology</li>
+                        <li>Some groups may not be well-represented in the data AI learns from</li>
+                    </ul>
+                    <h4>Privacy and Legal Concerns</h4>
+                    <ul>
+                        <li>There are risks of hacking and data leaks</li>
+                        <li>It is not always clear who is responsible if AI makes a mistake</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Patient Rights and Choice</h3>
+                <p>You should be told when AI tools are used in your care (for example diagnostics, translation, note taking, image analysis, etc.), and you should have the choice to accept or decline their use. Healthcare providers must explain what the AI tools do and what risks and benefits there are so you can decide based on full information.</p>
+            </div>
+
+            <div class="content-block highlight-block">
+                <h3>Summary / Key Takeaways</h3>
+                <ul>
+                    <li>AI tools help doctors by organizing information, detecting health problems, and saving time, but doctors still make final decisions.</li>
+                    <li>AI has benefits, like faster results, simple explanations of medical information, support for non-English speakers, and more.</li>
+                    <li>AI also has risks, such as possible mistakes, bias, or privacy concerns, so it is important to ask questions about the AI tools being used.</li>
+                    <li>You have a right to choose if and how AI is used in your care. You can agree to full use, limited use, or none at all.</li>
+                </ul>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-primary next-step" onclick="nextStep(2)">Next: Your Feelings &rarr;</button>
+            </div>
+        </section>
+
+        <!-- STEP 2: Your Feelings -->
+        <section id="step-2" class="step">
+            <h2>Step 2: Your Feelings</h2>
+            <p>Your personal comfort and priorities are just as important as the medical facts. Take a moment to think about what matters most to you, and use the sliders below to show how you feel about each statement. There are no right or wrong answers. This is about your own preferences.</p>
+            
+            <div class="values-form">
+                
+                <div class="slider-group">
+                    <h3>Detecting Medical Problems</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I want AI to help find medical problems early because I value getting the fastest, most accurate care possible.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-detecting">
+                        <div class="label-right">I prefer only a human to check my tests and scans because I value personal review and human judgment.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Diagnosis and Treatment Decisions</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I want AI to help my doctor think through my diagnosis or treatment because I value having extra tools for safety and accuracy.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-diagnosis">
+                        <div class="label-right">I prefer my doctor to make all decisions without AI because I value human experience and trust their judgment most.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Medical Notes and Visit Summaries</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I am comfortable with AI helping write or organize my visit notes because I value clear and easy-to-read information.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-notes">
+                        <div class="label-right">I want only a human to handle my notes because I value personal control over my medical information.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Paperwork and Administrative Work</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I want AI to help with forms, scheduling, and check-in because I value fast and easy visits.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-paperwork">
+                        <div class="label-right">I prefer people to handle my paperwork because I value human interaction.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Virtual Assistants</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I want quick and easy access to information and am okay with using an AI assistant if it gives me that.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-assistants">
+                        <div class="label-right">I prefer not to use an AI assistant because I value personal guidance and feel more comfortable speaking to a real person.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Privacy Concerns</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I am okay with AI using my medical data if it can improve my care.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-privacy">
+                        <div class="label-right">I do not want any of my medical data to be used by AI.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Technical Understanding</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I want AI used even if I don’t fully understand how it works.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-technical">
+                        <div class="label-right">I prefer only using tools I completely understand, even if AI could help.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Efficiency</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I value efficiency and AI tools can help make my care faster and easier.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-efficiency">
+                        <div class="label-right">I would prefer slower care if it means less AI involvement.</div>
+                    </div>
+                </div>
+
+                <div class="slider-group">
+                    <h3>Bias</h3>
+                    <div class="slider-container">
+                        <div class="label-left">I care about fairness and think that AI can do a good job treating all patients fairly.</div>
+                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-bias">
+                        <div class="label-right">I prefer humans making decisions when fairness is important.</div>
+                    </div>
+                </div>
+                
+                <div class="text-input-group">
+                    <label for="other-reasons">My other reasons:</label>
+                    <textarea id="other-reasons" rows="3" placeholder="Type your other reasons here..."></textarea>
+                </div>
+
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary prev-step" onclick="prevStep(1)">&larr; Back</button>
+                <button class="btn btn-primary next-step" onclick="nextStep(3)">Next: Quiz Yourself &rarr;</button>
+            </div>
+        </section>
+
+        <!-- STEP 3: Quiz Yourself -->
+        <section id="step-3" class="step">
+            <h2>Step 3: Quiz Yourself</h2>
+            <p>This short quiz is here to help you see how much you’ve understood so far. It is not a test and there are no right or wrong scores. Think of it as feedback to help you learn.</p>
+            
+            <form id="quiz-form">
+                <!-- Q1 -->
+                <div class="quiz-question" data-qid="1">
+                    <p class="question-text">1. What is artificial intelligence (AI) in medicine?</p>
+                    <label><input type="radio" name="q1" value="incorrect"> A type of robot that replaces doctors.</label>
+                    <label><input type="radio" name="q1" value="correct"> A computer tool that can learn and make decisions.</label>
+                    <label><input type="radio" name="q1" value="unsure"> I am not sure.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="quiz-question" data-qid="2">
+                    <p class="question-text">2. Which of the following is your right when it comes to AI in your care?</p>
+                    <label><input type="radio" name="q2" value="correct"> You can choose if and how AI is used in your care.</label>
+                    <label><input type="radio" name="q2" value="incorrect"> You must agree to the use of AI if the hospital uses it.</label>
+                    <label><input type="radio" name="q2" value="incorrect"> You cannot ask questions about AI.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="quiz-question" data-qid="3">
+                    <p class="question-text">3. Which is one common use of AI in healthcare?</p>
+                    <label><input type="radio" name="q3" value="incorrect"> Choosing your health insurance.</label>
+                    <label><input type="radio" name="q3" value="incorrect"> Deciding if you can see a doctor.</label>
+                    <label><input type="radio" name="q3" value="correct"> Reading medical images like X-rays or CT scans.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="quiz-question" data-qid="4">
+                    <p class="question-text">4. Which is a benefit of using AI in medical care?</p>
+                    <label><input type="radio" name="q4" value="correct"> It can help explain medical information in simple ways.</label>
+                    <label><input type="radio" name="q4" value="incorrect"> It replaces your doctor.</label>
+                    <label><input type="radio" name="q4" value="incorrect"> It never makes mistakes.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="quiz-question" data-qid="5">
+                    <p class="question-text">5. What is one of the risks of using AI?</p>
+                    <label><input type="radio" name="q5" value="incorrect"> It can help predict your health problems.</label>
+                    <label><input type="radio" name="q5" value="correct"> It may give answers that are wrong or biased.</label>
+                    <label><input type="radio" name="q5" value="incorrect"> It always understands your or your doctor’s feelings.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="quiz-question" data-qid="6">
+                    <p class="question-text">6. What do doctors still need to do when AI tools are used?</p>
+                    <label><input type="radio" name="q6" value="incorrect"> Let the AI make all final decisions.</label>
+                    <label><input type="radio" name="q6" value="incorrect"> Stop using medical notes.</label>
+                    <label><input type="radio" name="q6" value="correct"> Check the AI’s work and make the final decisions themselves.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="quiz-question" data-qid="7">
+                    <p class="question-text">7. If you do NOT want AI used for certain tasks, like note-taking or diagnosis, what can you do?</p>
+                    <label><input type="radio" name="q7" value="correct"> You can request that AI not be used for those parts of your care.</label>
+                    <label><input type="radio" name="q7" value="incorrect"> You must accept full AI use if it is being offered.</label>
+                    <label><input type="radio" name="q7" value="incorrect"> You cannot choose.</label>
+                    <div class="feedback hidden"></div>
+                </div>
+            </form>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary prev-step" onclick="prevStep(2)">&larr; Back</button>
+                <button class="btn btn-primary next-step" onclick="checkQuizAndNext()">Check Answers & Next &rarr;</button>
+            </div>
+        </section>
+
+        <!-- STEP 4: Your Decision -->
+        <section id="step-4" class="step">
+            <h2>Step 4: Your Decision</h2>
+            <p>Now that you’ve learned what AI is, how it’s used in medicine, and its risks and benefits, you might have a better idea of how you feel about it being used in your care. How do you feel about it right now?</p>
+            
+            <div class="decision-form">
+                <h3>Comfort Level</h3>
+                <div class="radio-group-horizontal">
+                    <label class="radio-card">
+                        <input type="radio" name="comfort" value="Not comfortable">
+                        <span>Not comfortable with AI use in my care.</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="comfort" value="Comfortable with some">
+                        <span>Comfortable with some AI use, but still have a lot of concerns.</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="comfort" value="Very comfortable">
+                        <span>Very comfortable with AI use in my care.</span>
+                    </label>
+                </div>
+
+                <div class="text-input-group">
+                    <label for="decision-details">Use the following space if needed to provide details about your decision:</label>
+                    <textarea id="decision-details" rows="3"></textarea>
+                </div>
+
+                <h3>Certainty</h3>
+                <p>How sure do you feel about your decision right now?</p>
+                <div class="radio-group-horizontal">
+                    <label class="radio-card">
+                        <input type="radio" name="certainty" value="Not sure at all">
+                        <span>Not sure at all.</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="certainty" value="Somewhat sure">
+                        <span>Somewhat sure.</span>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="certainty" value="Very sure">
+                        <span>Very sure.</span>
+                    </label>
+                </div>
+
+                <h3>Which of the following applies to you right now?</h3>
+                <div class="radio-group-vertical">
+                    <label><input type="radio" name="next_steps" value="ready"> I am confident in my decision and am ready to take action.</label>
+                    <label><input type="radio" name="next_steps" value="discuss"> I want to discuss options with others.</label>
+                    <label><input type="radio" name="next_steps" value="learn"> I do not fully understand my options, and want to learn more.</label>
+                </div>
+
+                <div class="text-input-group">
+                    <label for="concerns-list">Use the following space to list your thoughts, questions, or concerns:</label>
+                    <textarea id="concerns-list" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary prev-step" onclick="prevStep(3)">&larr; Back</button>
+                <button class="btn btn-primary next-step" onclick="generateSummary()">See Summary &rarr;</button>
+            </div>
+        </section>
+
+        <!-- STEP 5: Summary -->
+        <section id="step-5" class="step">
+            <h2>Step 5: Your Summary</h2>
+            
+            <div id="summary-content">
+                <!-- Dynamically populated via JS -->
+                <div class="summary-section">
+                    <h3>What Matters To You</h3>
+                    <div id="summary-values"></div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Your Understanding of The Facts</h3>
+                    <ul id="summary-facts-list"></ul>
+                    
+                    <div id="summary-review-needed" class="hidden">
+                        <h4>Information That You May Need to Review</h4>
+                         <ul id="summary-review-list"></ul>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Your Decision</h3>
+                    <p><strong>Comfort Level:</strong> <span id="summary-comfort"></span></p>
+                    <p><strong>Decision Comments:</strong> <span id="summary-decision-comments"></span></p>
+                    <p><strong>Certainty:</strong> <span id="summary-certainty"></span></p>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Next Steps</h3>
+                    <p id="summary-next-steps-text"></p>
+                    <p><strong>Comments:</strong> <span id="summary-concerns"></span></p>
+                    
+                    <div class="copy-box">
+                        <h4>Suggested wording to share with trusted persons or clinicians:</h4>
+                        <p><em>“I completed a decision about AI use in my care. I would like [full / limited / no] AI use. Please see my summary for details and the specific tasks where I prefer AI [to be / not to be] used.”</em></p>
+                        <p><em>“I want to discuss how AI may be used in my care. My patient decision aid summary says I’m concerned about [...]; can you explain which tools you use, how they are used, and whether I can opt out of specific uses?”</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-secondary prev-step" onclick="prevStep(4)">&larr; Back to Decision</button>
+                <button class="btn btn-primary" onclick="window.print()">Print Summary</button>
+            </div>
+
+             <div class="content-block" style="margin-top: 40px;">
+                <h3>Additional Information Sources</h3>
+                <ul>
+                    <li><a href="#">How is AI Used in Health Care — Mass General Brigham</a></li>
+                    <li><a href="#">These Health Systems Are Using AI to Make Meaningful Change — AMA</a></li>
+                    <li><a href="#">AI in Healthcare: The Future of Patient Care and Health Management — Mayo Clinic</a></li>
+                    <li><a href="#">When It Comes to Health Care, Will AI Be Helpful or Harmful? — Stanford Medicine</a></li>
+                    <li><a href="#">Do These 5 Things to Ensure AI Is Used Ethically and Safely in Care — AMA</a></li>
+                    <li><a href="#">Video: Artificial intelligence in healthcare: opportunities and challenges by Navid Toosi Saidy –– TEDxQUT</a></li>
+                </ul>
+                <p><strong>If you want to look for your own information:</strong></p>
+                <ol>
+                    <li><strong>Find good sources:</strong> Use trusted sites like PubMed, major medical organizations, or government health pages.</li>
+                    <li><strong>Check study quality:</strong> Choose articles that were peer-reviewed.</li>
+                    <li><strong>Understand what it means:</strong> Think about whether the results apply to you.</li>
+                    <li><strong>Ask a clinician if you’re unsure.</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Footer / References -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <p><strong>Developed by:</strong> Marharyta Krylova, BS | <strong>Last Updated:</strong> 11/21/2025</p>
+                <p><strong>Data Usage Statement:</strong> This tool does not collect, store, or transmit any personal data. All inputs are local to your session.</p>
+                <details>
+                    <summary>View References & Disclaimers</summary>
+                    <div class="references-list">
+                        <p><strong>Funding:</strong> The development of this tool received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.</p>
+                        <p><strong>Conflict of Interest:</strong> The authors/developers of the tool report no conflicts of interest.</p>
+                        <hr>
+                        <h4>References</h4>
+                        <ol style="font-size: 0.8rem; padding-left: 20px;">
+                            <li>Shaik T, Tao X, Higgins N, et al. Remote patient monitoring using artificial intelligence: Current state, applications, and challenges. Wiley Interdiscip Rev Data Min Knowl Discov. 2023;13(2):e1485.</li>
+                            <li>Kaul V, Enslin S, Gross SA. History of artificial intelligence in medicine. Gastrointest Endosc. 2020;92(4):807-812.</li>
+                            <li>Ahsan MM, Luna SA, Siddique Z. Machine-learning-based disease diagnosis: A comprehensive review. Healthcare (Basel). 2022;10(3):541.</li>
+                            <li>Al-Antari MA. Artificial intelligence for medical diagnostics-existing and future AI technology! Diagnostics (Basel). 2023;13(4):688.</li>
+                            <li>Khalifa M, Albadawy M. AI in diagnostic imaging: Revolutionising accuracy and efficiency. Comput Methods Programs Biomed Update. 2024;5(100146):100146.</li>
+                            <li>Duwe G, Mercier D, Wiesmann C, et al. Challenges and perspectives in use of artificial intelligence to support treatment recommendations in clinical oncology. Cancer Med. 2024;13(12):e7398.</li>
+                            <li>Haniff Q, Meng Z, Pongkemmanun T, et al. Use of artificial intelligence to transcribe and summarise general practice consultations. J Med Artif Intell. 2025;8:43-43.</li>
+                            <li>Basei de Paula PA, Bruneti Severino JV, Berger MN, et al. Improving documentation quality and patient interaction with AI: a tool for transforming medical records—an experience report. J Med Artif Intell. 2025;8(0):19-19.</li>
+                            <li>Bhavaraju SR. From subconscious to conscious to artificial intelligence: A focus on electronic health records. Neurol India. 2018;66(5):1270-1275.</li>
+                            <li>Clough RAJ, Sparkes WA, Clough OT, et al. Transforming healthcare documentation: harnessing the potential of AI to generate discharge summaries. BJGP Open. 2024;8(1):BJGPO.2023.0116.</li>
+                            <li>Bass J, Bodimeade C, Choudhury N. A quality improvement project of patient perception of AI-generated discharge summaries: a comparison with doctor-written summaries. Ann R Coll Surg Engl. 2025;107(8):559-562.</li>
+                            <li>Gafar R, Kumar T. An AI-based framework for Record-Keeping and Medical History. Procedia CIRP. 2024;128:888-893.</li>
+                            <li>Rahul N. Revolutionizing medical bill reviews with AI: Enhancing claims processing accuracy and efficiency. International Journal of AI, BigData, Computational and Management Studies. 2024;5(2):128-140.</li>
+                            <li>Islam MM, Poly TN, Yang HC, Li YCJ. Deep into laboratory: An artificial intelligence approach to recommend laboratory tests. Diagnostics (Basel). 2021;11(6):990.</li>
+                            <li>Lin SY, Shanafelt TD, Asch SM. Reimagining clinical documentation with artificial intelligence. Mayo Clin Proc. 2018;93(5):563-565.</li>
+                            <li>Wood KV, Frings D, Flood C, Thomas N. Artificial intelligence machine learning-driven outpatient appointment management: A qualitative study on acceptability. Digit Health. 2025;11:20552076251321016.</li>
+                            <li>Li B, Gross O, Crampton N, et al. Beyond the waiting room: Patient’s perspectives on the conversational nuances of pre-consultation chatbots. In: Proceedings of the CHI Conference on Human Factors in Computing Systems. Vol 11. ACM; 2024:1-24.</li>
+                            <li>Genovese A, Borna S, Gomez-Cabello CA, et al. Artificial intelligence in clinical settings: a systematic review of its role in language translation and interpretation. Ann Transl Med. 2024;12(6):117.</li>
+                            <li>Zaretsky J, Kim JM, Baskharoun S, et al. Generative artificial intelligence to transform inpatient discharge summaries to patient-friendly language and format. JAMA Netw Open. 2024;7(3):e240357.</li>
+                            <li>Armstrong D, Paul C, McGlaughlin B, Hill D. Can artificial intelligence (AI) educate your patient? A study to assess overall readability and pharmacists’ perception of AI‐generated patient education materials. J Am Coll Clin Pharm. 2024;7(8):803-808.</li>
+                            <li>Jeddi Z, Bohr A. Remote patient monitoring using artificial intelligence. In: Artificial Intelligence in Healthcare. Elsevier; 2020:203-234.</li>
+                            <li>Younis HA, Eisa TAE, Nasser M, et al. A systematic review and meta-analysis of artificial intelligence tools in medicine and healthcare. Diagnostics (Basel). 2024;14(1):109.</li>
+                            <li>Ploug T, Jørgensen RF, Motzfeldt HM, et al. The need for patient rights in AI-driven healthcare - risk-based regulation is not enough. J R Soc Med. 2025;118(8):248-252.</li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
