@@ -12,7 +12,7 @@
 
     <header class="main-header">
         <div class="container header-content">
-            <h1 class="logo">AI in Healthcare Patient Decision Aid</h1>
+            <button onclick="window.location.reload()" class="logo-btn" style="background:none; border:none; cursor:pointer; padding:0;"><h1 class="logo">AI in Healthcare Decision Aid</h1></button>
             <div class="search-wrapper">
                 <div class="search-container" id="search-input-container">
                     <!-- Tags will be injected here -->
@@ -227,16 +227,16 @@
             <div class="content-block">
                 <h3>Additional Information Sources</h3>
                 <ul>
-                    <li><a href="https://www.massgeneralbrigham.org/en/about/newsroom/articles/how-ai-is-used-in-healthcare" target="_blank">How is AI Used in Health Care — Mass General Brigham</a></li>
-                    <li><a href="https://www.ama-assn.org/practice-management/digital/these-health-systems-are-using-ai-make-meaningful-change" target="_blank">These Health Systems Are Using AI to Make Meaningful Change — AMA</a></li>
-                    <li><a href="https://www.mayoclinic.org/mccms/mccms-pubs/ai-in-healthcare" target="_blank">AI in Healthcare: The Future of Patient Care and Health Management — Mayo Clinic</a></li>
-                    <li><a href="https://stanmed.stanford.edu/artificial-intelligence-medicine-health-care-help-harm/" target="_blank">When It Comes to Health Care, Will AI Be Helpful or Harmful? — Stanford Medicine</a></li>
-                    <li><a href="https://www.ama-assn.org/practice-management/digital/do-these-5-things-ensure-ai-used-ethically-and-safely-care" target="_blank">Do These 5 Things to Ensure AI Is Used Ethically and Safely in Care — AMA</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=s0dM_Wz4i8I" target="_blank">Video: Artificial intelligence in healthcare: opportunities and challenges by Navid Toosi Saidy –– TEDxQUT</a></li>
+                    <li><a href="https://www.massgeneralbrigham.org/en/about/newsroom/articles/how-is-ai-used-in-health-care" target="_blank">How is AI Used in Health Care — Mass General Brigham</a></li>
+                    <li><a href="https://www.ama-assn.org/practice-management/digital-health/these-health-systems-are-using-ai-make-meaningful-change" target="_blank">These Health Systems Are Using AI to Make Meaningful Change — AMA</a></li>
+                    <li><a href="https://mcpress.mayoclinic.org/healthy-aging/ai-in-healthcare-the-future-of-patient-care-and-health-management/" target="_blank">AI in Healthcare: The Future of Patient Care and Health Management — Mayo Clinic</a></li>
+                    <li><a href="https://med.stanford.edu/news/insights/2023/05/when-it-comes-to-health-care-will-ai-be-helpful-or-harmful.html" target="_blank">When It Comes to Health Care, Will AI Be Helpful or Harmful? — Stanford Medicine</a></li>
+                    <li><a href="https://www.ama-assn.org/practice-management/digital-health/do-these-5-things-ensure-ai-used-ethically-safely-care#:~:text=There%20are%20numerous%20potential%20uses,each%20use%20comes%20with%20risks." target="_blank">Do These 5 Things to Ensure AI Is Used Ethically and Safely in Care — AMA</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=uvqDTbusdUU" target="_blank">Video: Artificial intelligence in healthcare: opportunities and challenges by Navid Toosi Saidy –– TEDxQUT</a></li>
                 </ul>
             </div>
 
-            <div class="nav-buttons">
+            <div class="nav-buttons" style="justify-content: flex-end;">
                 <button class="btn btn-primary next-step" onclick="nextStep(2)">Next: Your Feelings &rarr;</button>
             </div>
         </section>
@@ -444,8 +444,8 @@
                 </div>
 
                 <div class="text-input-group">
-                    <label for="decision-details">Use the following space if needed to provide details about your decision:</label>
-                    <textarea id="decision-details" rows="3"></textarea>
+                    <label for="decision-details">Details about your decision:</label>
+                    <textarea id="decision-details" rows="3" placeholder="Type details about your decision here if needed..."></textarea>
                 </div>
 
                 <h3>Certainty</h3>
@@ -473,8 +473,8 @@
                 </div>
 
                 <div class="text-input-group">
-                    <label for="concerns-list">Use the following space to list your thoughts, questions, or concerns:</label>
-                    <textarea id="concerns-list" rows="3"></textarea>
+                    <label for="concerns-list">Your thoughts, questions, or concerns:</label>
+                    <textarea id="concerns-list" rows="3" placeholder="Type your thoughts, questions, or concerns here..."></textarea>
                 </div>
             </div>
 
@@ -527,7 +527,10 @@
 
             <div class="nav-buttons">
                 <button class="btn btn-secondary prev-step" onclick="prevStep(4)">&larr; Back to Decision</button>
-                <button class="btn btn-primary" onclick="window.print()">Print Summary</button>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn btn-primary" onclick="printSummary()">Print Summary</button>
+                    <button class="btn btn-secondary" onclick="printFull()">Print Full Decision Aid</button>
+                </div>
             </div>
 
              <div class="content-block" style="margin-top: 40px;">
@@ -560,6 +563,11 @@
                     <div class="references-list">
                         <p><strong>Funding:</strong> The development of this tool received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.</p>
                         <p><strong>Conflict of Interest:</strong> The authors/developers of the tool report no conflicts of interest.</p>
+                        
+                        <p><strong>Evidence Rigor Statement:</strong> The information in this tool was gathered through searches on Google Scholar and PubMed using key terms such as “patient decision aid for AI use,” “informed consent for AI in medical care,” “AI in healthcare,” and “patient attitudes toward AI.” Only peer-reviewed articles published in trusted journals and authored by qualified researchers were included. Studies were assessed for clear methods and reliable data. The key findings from each study were summarized and rewritten in plain language to make the information accessible and understandable for patients,</p>
+                        
+                        <p><strong>Quality of Scientific Evidence Statement:</strong> The information in this tool is based on peer-reviewed scientific articles and reputable academic sources. While all sources have been carefully selected, the quality and rigor of these studies may vary, and some may have limitations or gaps in available data. The content presented here reflects the best available evidence at the time of development and has been reviewed and summarized to the best of the developers’ knowledge and judgment.</p>
+
                         <hr>
                         <h4>References</h4>
                         <ol style="font-size: 0.8rem; padding-left: 20px;">

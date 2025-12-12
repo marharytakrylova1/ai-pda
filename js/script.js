@@ -184,15 +184,38 @@ function generateSummary() {
     valuesContainer.innerHTML = '';
     
     sliders.forEach(item => {
-        const val = document.getElementById(item.id).value;
-        const p = document.createElement('p');
+        const val = parseInt(document.getElementById(item.id).value);
+        const p = document.createElement('div');
+        p.style.marginBottom = "15px";
         
+        // Determine Qualifier
         let preferenceText = '';
-        if (val < 40) preferenceText = "Leans towards accepting AI use";
-        else if (val > 60) preferenceText = "Leans towards Human-only care";
-        else preferenceText = "Undecided / Neutral";
+        if (val <= 25) {
+            preferenceText = "Strongly leans towards accepting AI use";
+        } else if (val > 25 && val < 50) {
+            preferenceText = "Moderately leans towards accepting AI use";
+        } else if (val === 50) {
+            preferenceText = "Undecided / Neutral";
+        } else if (val > 50 && val < 75) {
+            preferenceText = "Moderately leans towards Human-only care";
+        } else if (val >= 75) {
+            preferenceText = "Strongly leans towards Human-only care";
+        }
 
-        p.innerHTML = `<strong>${item.label}:</strong> ${preferenceText}`;
+        // Render Bar
+        // HTML Range is 0-100.
+        // We want a visual bar.
+        const barHtml = `
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+                <span style="font-size: 0.8rem;">AI</span>
+                <div style="flex: 1; height: 10px; background: #eee; border-radius: 5px; position: relative;">
+                    <div style="position: absolute; left: ${val}%; top: -2px; width: 14px; height: 14px; background: #0056b3; border-radius: 50%; transform: translateX(-50%);"></div>
+                </div>
+                <span style="font-size: 0.8rem;">Human</span>
+            </div>
+        `;
+
+        p.innerHTML = `<strong>${item.label}:</strong> ${preferenceText} ${barHtml}`;
         valuesContainer.appendChild(p);
     });
 
@@ -266,3 +289,59 @@ function generateSummary() {
     // Show step 5
     nextStep(5);
 }
+
+// ==========================================
+// PRINT FUNCTIONS
+// ==========================================
+
+function getPrintDate() {
+    const d = new Date();
+    return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+}
+
+function injectPrintHeader() {
+    // Check if it already exists
+    if (document.getElementById('print-header-info')) return;
+
+    const summarySection = document.getElementById('step-5');
+    const div = document.createElement('div');
+    div.id = 'print-header-info';
+    div.className = 'print-only-header'; // We will style this to only show in print mode if needed, or JS will handle insertion/removal
+    div.style.marginBottom = '20px';
+    div.style.borderBottom = '2px solid #333';
+    div.style.paddingBottom = '10px';
+    
+    div.innerHTML = `
+        <h2>AI in Healthcare Decision Aid</h2>
+        <p><strong>Developed by:</strong> Marharyta Krylova, BS</p>
+        <p><strong>Last Updated:</strong> 11/21/2025</p>
+        <p><strong>Date Printed:</strong> ${getPrintDate()}</p>
+    `;
+
+    summarySection.insertBefore(div, summarySection.firstChild);
+}
+
+function printSummary() {
+    injectPrintHeader();
+    document.body.classList.add('print-summary-mode');
+    document.body.classList.remove('print-full-mode');
+    window.print();
+    // Cleanup if needed? Usually print dialog pauses script.
+    // document.body.classList.remove('print-summary-mode');
+}
+
+function printFull() {
+    document.body.classList.add('print-full-mode');
+    document.body.classList.remove('print-summary-mode');
+    // Ensure all details are open for full print?
+    document.querySelectorAll('details').forEach(d => d.open = true);
+    window.print();
+}
+
+// Listen for afterprint to reset state if needed
+window.addEventListener('afterprint', () => {
+    document.body.classList.remove('print-summary-mode');
+    document.body.classList.remove('print-full-mode');
+    const printHeader = document.getElementById('print-header-info');
+    if (printHeader) printHeader.remove();
+});

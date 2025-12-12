@@ -507,27 +507,111 @@ mark {
 }
 
 /* Printing */
+
 @media print {
-    .main-header, .progress-container, .nav-buttons, .intro-box {
+
+    /* DEFAULT / SHARED RULES */
+
+    .main-header, .progress-container, .nav-buttons, .intro-box, .search-wrapper {
+
         display: none !important;
-    }
-    
-    .step {
-        display: block !important;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
+
     }
 
-    #step-1, #step-2, #step-3, #step-4 {
-        display: none !important; /* Only print summary or currently visible? Usually summary */
-    }
 
-    #step-5 {
-        display: block !important;
-    }
 
     body {
+
         background: white;
+
     }
+
+
+
+    .step {
+
+        box-shadow: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        border: none;
+
+    }
+
+
+
+    /* PRINT SUMMARY MODE (Triggered by class print-summary-mode) */
+
+    body.print-summary-mode #step-1,
+
+    body.print-summary-mode #step-2,
+
+    body.print-summary-mode #step-3,
+
+    body.print-summary-mode #step-4 {
+
+        display: none !important;
+
+    }
+
+    
+
+    body.print-summary-mode #step-5 {
+
+        display: block !important;
+
+    }
+
+
+
+    /* PRINT FULL MODE (Triggered by class print-full-mode) */
+
+    body.print-full-mode .step {
+
+        display: block !important;
+
+        page-break-after: always;
+
+    }
+
+    
+
+    body.print-full-mode #step-5 {
+
+        page-break-after: auto;
+
+    }
+
+
+
+    /* Hide the summary print buttons themselves (already hidden by nav-buttons rule, but just in case) */
+
+    
+
+    /* Ensure footer prints */
+
+    .main-footer {
+
+        display: block !important;
+
+        margin-top: 20px;
+
+        padding: 10px 0;
+
+        border-top: 1px solid #ccc;
+
+    }
+
+
+
+    /* Ensure Print Header Info is visible */
+
+    #print-header-info {
+
+        display: block !important;
+
+    }
+
 }
