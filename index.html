@@ -246,13 +246,15 @@
             <h2>Step 2: Your Feelings</h2>
             <p>Your personal comfort and priorities are just as important as the medical facts. Take a moment to think about what matters most to you, and use the sliders below to show how you feel about each statement. There are no right or wrong answers. This is about your own preferences.</p>
             
-            <div class="values-form">
-                
                 <div class="slider-group">
                     <h3>Detecting Medical Problems</h3>
                     <div class="slider-container">
                         <div class="label-left">I want AI to help find medical problems early because I value getting the fastest, most accurate care possible.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-detecting">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-detecting" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer only a human to check my tests and scans because I value personal review and human judgment.</div>
                     </div>
                 </div>
@@ -261,7 +263,11 @@
                     <h3>Diagnosis and Treatment Decisions</h3>
                     <div class="slider-container">
                         <div class="label-left">I want AI to help my doctor think through my diagnosis or treatment because I value having extra tools for safety and accuracy.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-diagnosis">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-diagnosis" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer my doctor to make all decisions without AI because I value human experience and trust their judgment most.</div>
                     </div>
                 </div>
@@ -270,7 +276,11 @@
                     <h3>Medical Notes and Visit Summaries</h3>
                     <div class="slider-container">
                         <div class="label-left">I am comfortable with AI helping write or organize my visit notes because I value clear and easy-to-read information.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-notes">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-notes" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I want only a human to handle my notes because I value personal control over my medical information.</div>
                     </div>
                 </div>
@@ -279,7 +289,11 @@
                     <h3>Paperwork and Administrative Work</h3>
                     <div class="slider-container">
                         <div class="label-left">I want AI to help with forms, scheduling, and check-in because I value fast and easy visits.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-paperwork">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-paperwork" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer people to handle my paperwork because I value human interaction.</div>
                     </div>
                 </div>
@@ -288,7 +302,11 @@
                     <h3>Virtual Assistants</h3>
                     <div class="slider-container">
                         <div class="label-left">I want quick and easy access to information and am okay with using an AI assistant if it gives me that.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-assistants">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-assistants" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer not to use an AI assistant because I value personal guidance and feel more comfortable speaking to a real person.</div>
                     </div>
                 </div>
@@ -297,7 +315,11 @@
                     <h3>Privacy Concerns</h3>
                     <div class="slider-container">
                         <div class="label-left">I am okay with AI using my medical data if it can improve my care.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-privacy">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-privacy" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I do not want any of my medical data to be used by AI.</div>
                     </div>
                 </div>
@@ -306,7 +328,11 @@
                     <h3>Technical Understanding</h3>
                     <div class="slider-container">
                         <div class="label-left">I want AI used even if I don’t fully understand how it works.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-technical">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-technical" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer only using tools I completely understand, even if AI could help.</div>
                     </div>
                 </div>
@@ -315,7 +341,11 @@
                     <h3>Efficiency</h3>
                     <div class="slider-container">
                         <div class="label-left">I value efficiency and AI tools can help make my care faster and easier.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-efficiency">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-efficiency" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I would prefer slower care if it means less AI involvement.</div>
                     </div>
                 </div>
@@ -324,7 +354,11 @@
                     <h3>Bias</h3>
                     <div class="slider-container">
                         <div class="label-left">I care about fairness and think that AI can do a good job treating all patients fairly.</div>
-                        <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-bias">
+                        <div class="slider-wrapper">
+                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-bias" oninput="updateSliderPercent(this)">
+                            <div class="tick-mark"></div>
+                            <output class="slider-bubble">50%</output>
+                        </div>
                         <div class="label-right">I prefer humans making decisions when fairness is important.</div>
                     </div>
                 </div>
@@ -528,12 +562,11 @@
             <div class="nav-buttons">
                 <button class="btn btn-secondary prev-step" onclick="prevStep(4)">&larr; Back to Decision</button>
                 <div style="display:flex; gap:10px;">
-                    <button class="btn btn-primary" onclick="printSummary()">Print Summary</button>
-                    <button class="btn btn-secondary" onclick="printFull()">Print Full Decision Aid</button>
+                    <button class="btn btn-primary" onclick="printSummary()">Save Summary</button>
                 </div>
             </div>
 
-             <div class="content-block" style="margin-top: 40px;">
+             <div class="content-block" id="additional-info-block" style="margin-top: 40px;">
                 <h3>Additional Information Sources</h3>
                 <ul>
                     <li><a href="#">How is AI Used in Health Care — Mass General Brigham</a></li>
@@ -557,6 +590,7 @@
         <footer class="main-footer">
             <div class="footer-content">
                 <p><strong>Developed by:</strong> Marharyta Krylova, BS | <strong>Last Updated:</strong> 12/11/2025</p>
+                <p><strong>Next Update:</strong> Annually or when new developments become available.</p>
                 <p><strong>Data Usage Statement:</strong> This tool does not collect, store, or transmit any personal data. All inputs are local to your session.</p>
                 <details>
                     <summary>View References & Disclaimers</summary>
