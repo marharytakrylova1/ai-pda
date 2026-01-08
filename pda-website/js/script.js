@@ -374,3 +374,26 @@ window.addEventListener('afterprint', () => {
     const printHeader = document.getElementById('print-header-info');
     if (printHeader) printHeader.remove();
 });
+
+// ==========================================
+// VISUAL/TEXT MODE TOGGLE
+// ==========================================
+function toggleVisualMode() {
+    const toggle = document.getElementById('visual-mode-toggle');
+    const body = document.body;
+    
+    if (toggle.checked) {
+        // Visual Mode
+        body.classList.add('visual-mode');
+        body.classList.remove('text-mode');
+    } else {
+        // Text Mode
+        body.classList.add('text-mode');
+        body.classList.remove('visual-mode');
+    }
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    toggleVisualMode();
+});

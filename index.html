@@ -13,12 +13,26 @@
     <header class="main-header">
         <div class="container header-content">
             <button onclick="window.location.reload()" class="logo-btn" style="background:none; border:none; cursor:pointer; padding:0;"><h1 class="logo">AI in Healthcare Decision Aid</h1></button>
-            <div class="search-wrapper">
-                <div class="search-container" id="search-input-container">
-                    <!-- Tags will be injected here -->
-                    <input type="text" id="site-search" placeholder="Search key terms...">
+            
+            <div class="header-controls" style="display: flex; align-items: center; gap: 20px;">
+                <!-- Visual Mode Toggle -->
+                <div class="visual-toggle" style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                    <span>Text</span>
+                    <label class="switch">
+                        <input type="checkbox" id="visual-mode-toggle" checked onchange="toggleVisualMode()">
+                        <span class="slider round"></span>
+                        <span class="slider-thumb"></span>
+                    </label>
+                    <span>Visuals</span>
                 </div>
-                <button id="search-btn" aria-label="Search">🔍</button>
+
+                <div class="search-wrapper">
+                    <div class="search-container" id="search-input-container">
+                        <!-- Tags will be injected here -->
+                        <input type="text" id="site-search" placeholder="Search key terms...">
+                    </div>
+                    <button id="search-btn" aria-label="Search">🔍</button>
+                </div>
             </div>
         </div>
     </header>
@@ -64,14 +78,24 @@
             <div class="content-block">
                 <h3>How Do AI Tools Work?</h3>
                 <p>AI tools use computer programs called algorithms to find patterns in large amounts of data. They are trained on this information and learn from it to make predictions and suggestions. AI developers follow six general steps when creating AI:</p>
-                <ol>
-                    <li>Decide what AI should do</li>
-                    <li>Gather information the AI will learn from</li>
-                    <li>Teach the computer to find patterns in the data</li>
-                    <li>Check if the tool works well</li>
-                    <li>Put AI into real use to help people</li>
-                    <li>Keep checking the tool and make updates over time</li>
-                </ol>
+                
+                <!-- Visual/Text Switchable Content -->
+                <div class="visual-text-content">
+                    <div class="text-mode-only" style="display: none;">
+                        <ol>
+                            <li>Decide what AI should do</li>
+                            <li>Gather information the AI will learn from</li>
+                            <li>Teach the computer to find patterns in the data</li>
+                            <li>Check if the tool works well</li>
+                            <li>Put AI into real use to help people</li>
+                            <li>Keep checking the tool and make updates over time</li>
+                        </ol>
+                    </div>
+                    <div class="visual-mode-only">
+                        <img src="images/AI development.png" alt="Diagram showing the 6 steps of AI development: Decide, Gather, Teach, Check, Use, Update" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #eee; margin: 15px 0;">
+                    </div>
+                </div>
+
                 <p>Although these are the best practices for developing AI tools, there are currently no regulations to make these steps are followed.</p>
             </div>
 

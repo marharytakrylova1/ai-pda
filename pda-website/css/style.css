@@ -626,3 +626,172 @@ mark {
         display: block !important;
     }
 }
+/* Sliders */
+.slider-group {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.slider-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+    min-height: 30px; /* Ensure space */
+}
+
+/* 1. The Gray Track (Bottom Layer) */
+.slider-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Match input margin/position */
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+/* 2. The Ticks (Middle Layer) */
+.ticks-container {
+    position: absolute;
+    top: 10px; /* Match track top */
+    width: 100%;
+    height: 8px; /* Match track height */
+    z-index: 1; /* Above track, below input */
+    pointer-events: none;
+}
+
+/* Tick Marks */
+.tick-mark-25, .tick-mark-50, .tick-mark-75 {
+    position: absolute;
+    top: -2px; /* Extend above track */
+    width: 2px;
+    height: 160%;
+    border-radius: 999px;
+    background-color: #afafaf;
+}
+
+.tick-mark-25 { left: 25%; }
+.tick-mark-50 { left: 50%; }
+.tick-mark-75 { left: 75%; }
+
+/* 3. The Input Range (Top Layer - Transparent Track, Visible Thumb) */
+.value-slider {
+    width: 100%;
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    background: transparent; /* Make track transparent so we see ::before and ticks */
+    margin-top: 10px; /* Align with track/ticks */
+    z-index: 2; /* Top layer */
+    position: relative;
+    height: 8px; /* Match track height for alignment */
+    cursor: pointer;
+}
+
+/* Thumb Styles */
+.value-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    margin-top: -8px; /* Center thumb vertically on the 8px track */
+    position: relative;
+    z-index: 3;
+}
+
+.value-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    border: none;
+    position: relative;
+    z-index: 3;
+}
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Track */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Default (Unchecked/Text) Color - Grey */
+  transition: .4s;
+  border-radius: 20px;
+}
+
+/* Slider Thumb */
+.slider-thumb {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Checked State (Visual Mode) */
+.switch input:checked + .slider {
+  background-color: #2196F3; /* Blue when checked - using standard blue, can use var(--primary-color) if available */
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.switch input:checked + .slider + .slider-thumb {
+  transform: translateX(20px);
+}
+
+/* Visual Mode Logic */
+/* Default is Visual Mode (checked) based on HTML structure, but JS will control classes */
+/* If body has 'text-mode', show text, hide visual */
+body.text-mode .visual-mode-only {
+    display: none !important;
+}
+body.text-mode .text-mode-only {
+    display: block !important;
+}
+
+/* If body has 'visual-mode' (default), show visual, hide text */
+body.visual-mode .text-mode-only {
+    display: none !important;
+}
+body.visual-mode .visual-mode-only {
+    display: block !important;
+}
