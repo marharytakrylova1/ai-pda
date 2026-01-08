@@ -83,7 +83,7 @@ function renderTags() {
         const tag = document.createElement('span');
         tag.className = 'search-tag';
         // Escape single quotes for the onclick handler
-        const escapedTerm = term.replace(/'/g, "'");
+        const escapedTerm = term.replace(/'/g, "'\\");
         tag.innerHTML = `${term} <span class="search-tag-close" onclick="removeTag('${escapedTerm}')">×</span>`;
         searchContainer.insertBefore(tag, searchInput);
     });
@@ -184,6 +184,12 @@ function checkQuiz() {
             quizResults[qId] = false;
         }
     });
+
+    // SHOW NEXT BUTTON
+    const nextBtn = document.getElementById('quiz-next-btn');
+    if (nextBtn) {
+        nextBtn.style.display = 'inline-block';
+    }
 }
 
 
@@ -237,6 +243,7 @@ function generateSummary() {
             </div>
         `;
 
+        // Included (XX%) as requested by user prompt previously
         p.innerHTML = `<strong>${item.label}:</strong> ${preferenceText} (${val}%) ${barHtml}`;
         valuesContainer.appendChild(p);
     });

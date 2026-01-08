@@ -27,8 +27,8 @@
         <!-- Intro Section -->
         <div class="intro-box" style="margin-bottom: 30px; margin-top: 30px;">
             <h3>Should AI Be Involved In My Medical Care?</h3>
-            <p>Artificial intelligence, or AI, is a tool that is seeing increased use in healthcare to help medical professionals take notes, make decisions, plan treatments, and more. While AI can be helpful, it is not perfect and it’s important for you to know when and how it is being used in your care.</p>
-            <p>You have the right to understand how AI might affect your health and to decide whether or not you want it to be part of your care. This tool will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.</p>
+            <p>Artificial intelligence, or AI, is increasingly used in healthcare. It helps medical professionals with note-taking, decision-making, and treatment planning. While AI can be helpful, it can also make mistakes, provide incomplete responses, or have biases. For this reason, it is important for you to know when and how it is being used in your care.</p>
+            <p>You have the right to understand how AI might affect your health and to decide if you want it to be part of your care and to what extent. This tool will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.</p>
         </div>
 
         <!-- Progress Bar -->
@@ -58,7 +58,7 @@
 
             <div class="content-block">
                 <h3>What is AI?</h3>
-                <p>You have probably heard about artificial intelligence, or AI, especially as it becomes more common in healthcare. AI is a type of computer technology that can learn and make decisions like a human. AI allows computers to do things that would otherwise need the human brain.</p>
+                <p>You have probably heard about artificial intelligence, or AI, especially as it becomes more common in healthcare. AI is a type of computer technology that looks at large amounts of data and predicts what is most likely to happen next. It does not think or feel like a human. Instead, it follows patterns it has learned from data to help make predictions or suggestions.</p>
             </div>
 
             <div class="content-block">
@@ -72,6 +72,7 @@
                     <li>Put AI into real use to help people</li>
                     <li>Keep checking the tool and make updates over time</li>
                 </ol>
+                <p>Although these are the best practices for developing AI tools, there are currently no regulations to make these steps are followed.</p>
             </div>
 
             <div class="content-block">
@@ -132,6 +133,7 @@
                         <ul>
                             <li>Gives clear and organized answers</li>
                             <li>Helps doctors think through medical problems</li>
+                            <li>Helps connect and understand data</li>
                             <li>Can help with diagnosing illnesses</li>
                             <li>Works well for reading medical images, like X-rays</li>
                             <li>Can reduce human-error mistakes</li>
@@ -178,6 +180,7 @@
                         <ul>
                             <li>Does not understand feelings</li>
                             <li>Could lead to less human involvement if overused</li>
+                            <li>Can lead to overreliance if medical professionals assume it is correct</li>
                             <li>Still needs doctors to check its work</li>
                         </ul>
                     </details>
@@ -246,129 +249,159 @@
             <h2>Step 2: Your Feelings</h2>
             <p>Your personal comfort and priorities are just as important as the medical facts. Take a moment to think about what matters most to you, and use the sliders below to show how you feel about each statement. There are no right or wrong answers. This is about your own preferences.</p>
             
-                <div class="slider-group">
-                    <h3>Detecting Medical Problems</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I want AI to help find medical problems early because I value getting the fastest, most accurate care possible.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-detecting" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                <div class="values-form">
+                    
+                    <!-- Helper class for tick marks -->
+                    <div class="slider-group">
+                        <h3>Detecting Medical Problems</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I want AI to help find medical problems early because I value getting the fastest, most accurate care possible.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-detecting">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer only a human to check my tests and scans because I value personal review and human judgment.</div>
                         </div>
-                        <div class="label-right">I prefer only a human to check my tests and scans because I value personal review and human judgment.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Diagnosis and Treatment Decisions</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I want AI to help my doctor think through my diagnosis or treatment because I value having extra tools for safety and accuracy.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-diagnosis" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Diagnosis and Treatment Decisions</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I want AI to help my doctor think through my diagnosis or treatment because I value having extra tools for safety and accuracy.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-diagnosis">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer my doctor to make all decisions without AI because I value human experience and trust their judgment most.</div>
                         </div>
-                        <div class="label-right">I prefer my doctor to make all decisions without AI because I value human experience and trust their judgment most.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Medical Notes and Visit Summaries</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I am comfortable with AI helping write or organize my visit notes because I value clear and easy-to-read information.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-notes" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Medical Notes and Visit Summaries</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I am comfortable with AI helping write or organize my visit notes because I value clear and easy-to-read information.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-notes">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I want only a human to handle my notes because I value personal control over my medical information.</div>
                         </div>
-                        <div class="label-right">I want only a human to handle my notes because I value personal control over my medical information.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Paperwork and Administrative Work</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I want AI to help with forms, scheduling, and check-in because I value fast and easy visits.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-paperwork" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Paperwork and Administrative Work</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I want AI to help with forms, scheduling, and check-in because I value fast and easy visits.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-paperwork">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer people to handle my paperwork because I value human interaction.</div>
                         </div>
-                        <div class="label-right">I prefer people to handle my paperwork because I value human interaction.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Virtual Assistants</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I want quick and easy access to information and am okay with using an AI assistant if it gives me that.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-assistants" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Virtual Assistants</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I want quick and easy access to information and am okay with using an AI assistant if it gives me that.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-assistants">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer not to use an AI assistant because I value personal guidance and feel more comfortable speaking to a real person.</div>
                         </div>
-                        <div class="label-right">I prefer not to use an AI assistant because I value personal guidance and feel more comfortable speaking to a real person.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Privacy Concerns</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I am okay with AI using my medical data if it can improve my care.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-privacy" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Privacy Concerns</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I am okay with AI using my medical data if it can improve my care.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-privacy">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I do not want any of my medical data to be used by AI.</div>
                         </div>
-                        <div class="label-right">I do not want any of my medical data to be used by AI.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Technical Understanding</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I want AI used even if I don’t fully understand how it works.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-technical" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Technical Understanding</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I want AI used even if I don’t fully understand how it works.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-technical">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer only using tools I completely understand, even if AI could help.</div>
                         </div>
-                        <div class="label-right">I prefer only using tools I completely understand, even if AI could help.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Efficiency</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I value efficiency and AI tools can help make my care faster and easier.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-efficiency" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Efficiency</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I value efficiency and AI tools can help make my care faster and easier.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-efficiency">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I would prefer slower care if it means less AI involvement.</div>
                         </div>
-                        <div class="label-right">I would prefer slower care if it means less AI involvement.</div>
                     </div>
-                </div>
 
-                <div class="slider-group">
-                    <h3>Bias</h3>
-                    <div class="slider-container">
-                        <div class="label-left">I care about fairness and think that AI can do a good job treating all patients fairly.</div>
-                        <div class="slider-wrapper">
-                            <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-bias" oninput="updateSliderPercent(this)">
-                            <div class="tick-mark"></div>
-                            <output class="slider-bubble">50%</output>
+                    <div class="slider-group">
+                        <h3>Bias</h3>
+                        <div class="slider-container">
+                            <div class="label-left">I care about fairness and think that AI can do a good job treating all patients fairly.</div>
+                            <div class="slider-wrapper">
+                                <input type="range" min="0" max="100" value="50" class="value-slider" id="slider-bias">
+                                <div class="ticks-container">
+                                    <div class="tick-mark-25"></div>
+                                    <div class="tick-mark-50"></div>
+                                    <div class="tick-mark-75"></div>
+                                </div>
+                            </div>
+                            <div class="label-right">I prefer humans making decisions when fairness is important.</div>
                         </div>
-                        <div class="label-right">I prefer humans making decisions when fairness is important.</div>
                     </div>
-                </div>
-                
-                <div class="text-input-group">
-                    <label for="other-reasons">My other reasons:</label>
-                    <textarea id="other-reasons" rows="3" placeholder="Type your other reasons here..."></textarea>
-                </div>
+                    
+                    <div class="text-input-group">
+                        <label for="other-reasons">My other reasons:</label>
+                        <textarea id="other-reasons" rows="3" placeholder="Type your other reasons here..."></textarea>
+                    </div>
 
-            </div>
+                </div>
 
             <div class="nav-buttons">
                 <button class="btn btn-secondary prev-step" onclick="prevStep(1)">&larr; Back</button>
@@ -450,7 +483,8 @@
                 <button class="btn btn-secondary prev-step" onclick="prevStep(2)">&larr; Back</button>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn btn-secondary" onclick="checkQuiz()">Check Answers</button>
-                    <button class="btn btn-primary next-step" onclick="nextStep(4)">Next &rarr;</button>
+                    <!-- HIDDEN NEXT BUTTON INITIALLY -->
+                    <button class="btn btn-primary next-step" id="quiz-next-btn" onclick="nextStep(4)" style="display: none;">Next &rarr;</button>
                 </div>
             </div>
         </section>
@@ -569,12 +603,12 @@
              <div class="content-block" id="additional-info-block" style="margin-top: 40px;">
                 <h3>Additional Information Sources</h3>
                 <ul>
-                    <li><a href="#">How is AI Used in Health Care — Mass General Brigham</a></li>
-                    <li><a href="#">These Health Systems Are Using AI to Make Meaningful Change — AMA</a></li>
-                    <li><a href="#">AI in Healthcare: The Future of Patient Care and Health Management — Mayo Clinic</a></li>
-                    <li><a href="#">When It Comes to Health Care, Will AI Be Helpful or Harmful? — Stanford Medicine</a></li>
-                    <li><a href="#">Do These 5 Things to Ensure AI Is Used Ethically and Safely in Care — AMA</a></li>
-                    <li><a href="#">Video: Artificial intelligence in healthcare: opportunities and challenges by Navid Toosi Saidy –– TEDxQUT</a></li>
+                    <li><a href="https://www.massgeneralbrigham.org/en/about/newsroom/articles/how-is-ai-used-in-health-care" target="_blank">How is AI Used in Health Care — Mass General Brigham</a></li>
+                    <li><a href="https://www.ama-assn.org/practice-management/digital-health/these-health-systems-are-using-ai-make-meaningful-change" target="_blank">These Health Systems Are Using AI to Make Meaningful Change — AMA</a></li>
+                    <li><a href="https://mcpress.mayoclinic.org/healthy-aging/ai-in-healthcare-the-future-of-patient-care-and-health-management/" target="_blank">AI in Healthcare: The Future of Patient Care and Health Management — Mayo Clinic</a></li>
+                    <li><a href="https://med.stanford.edu/news/insights/2023/05/when-it-comes-to-health-care-will-ai-be-helpful-or-harmful.html" target="_blank">When It Comes to Health Care, Will AI Be Helpful or Harmful? — Stanford Medicine</a></li>
+                    <li><a href="https://www.ama-assn.org/practice-management/digital-health/do-these-5-things-ensure-ai-used-ethically-safely-care#:~:text=There%20are%20numerous%20potential%20uses,each%20use%20comes%20with%20risks." target="_blank">Do These 5 Things to Ensure AI Is Used Ethically and Safely in Care — AMA</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=uvqDTbusdUU" target="_blank">Video: Artificial intelligence in healthcare: opportunities and challenges by Navid Toosi Saidy –– TEDxQUT</a></li>
                 </ul>
                 <p><strong>If you want to look for your own information:</strong></p>
                 <ol>
