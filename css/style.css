@@ -299,333 +299,55 @@ details ul {
     margin: 0;
 }
 
-/* Sliders */
-.slider-group {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.slider-container {
+/* New: Accordion Content Layout for Visual Mode */
+.accordion-content {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: center; /* or flex-start */
     gap: 20px;
+    padding: 15px;
 }
 
-.slider-wrapper {
-    position: relative;
-    flex: 1;
+/* When in Text Mode, stack them or hide image (controlled by JS visual-mode classes) */
+body.text-mode .accordion-content {
+    display: block;
+}
+
+/* Image container */
+.accordion-visual {
+    flex: 0 0 150px; /* Fixed width for the image container */
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-bottom: 10px;
-    min-height: 30px; /* Ensure space */
+    justify-content: center;
 }
 
-/* 1. The Gray Track (Bottom Layer) */
-.slider-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 10px; /* Match input margin/position */
-    left: 0;
+.accordion-visual img {
     width: 100%;
-    height: 8px;
-    background: #ddd;
-    border-radius: 5px;
-    z-index: 0;
-}
-
-/* 2. The Ticks (Middle Layer) */
-.ticks-container {
-    position: absolute;
-    top: 10px; /* Match track top */
-    width: 100%;
-    height: 8px; /* Match track height */
-    z-index: 1; /* Above track, below input */
-    pointer-events: none;
-}
-
-/* Tick Marks */
-.tick-mark-25, .tick-mark-50, .tick-mark-75 {
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    background-color: #999;
-}
-
-.tick-mark-25 { left: 25%; }
-.tick-mark-50 { left: 50%; }
-.tick-mark-75 { left: 75%; }
-
-/* 3. The Input Range (Top Layer - Transparent Track, Visible Thumb) */
-.value-slider {
-    width: 100%;
-    -webkit-appearance: none; /* Override default CSS styles */
-    appearance: none;
-    background: transparent; /* Make track transparent so we see ::before and ticks */
-    margin-top: 10px; /* Align with track/ticks */
-    z-index: 2; /* Top layer */
-    position: relative;
-    height: 8px; /* Match track height for alignment */
-    cursor: pointer;
-}
-
-/* Thumb Styles */
-.value-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin-top: -8px; /* Center thumb vertically on the 8px track ((8 - 24) / 2) */
-    position: relative;
-    z-index: 3;
-}
-
-.value-slider::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    border: none;
-    position: relative;
-    z-index: 3;
-}
-
-
-.label-left, .label-right {
-    flex: 0 0 30%;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.label-left { text-align: right; }
-.label-right { text-align: left; }
-
-/* Quiz */
-.quiz-question {
-    background: #f9f9f9;
-    padding: 20px;
+    height: auto;
     border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
+    object-fit: cover;
 }
 
-.quiz-question label {
-    display: block;
-    margin: 10px 0;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background 0.2s;
-}
-
-.quiz-question label:hover {
-    background: #eee;
-}
-
-.feedback {
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-}
-
-.feedback.correct {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.feedback.incorrect {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Decision Form */
-.radio-group-horizontal {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.radio-card {
+/* Text container */
+.accordion-text {
     flex: 1;
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s;
 }
 
-.radio-card:hover {
-    background: #f0f8ff;
-    border-color: var(--primary-color);
-}
-
-.radio-card input {
-    margin-bottom: 10px;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-.radio-group-vertical label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    resize: vertical;
-}
-
-/* Nav Buttons */
-.nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.2s;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #004494;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-/* Disabled state */
-.btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-
-/* Summary Styles */
-.summary-section {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.copy-box {
-    background: white;
-    padding: 15px;
-    border: 1px dashed #ccc;
-    margin-top: 15px;
-}
-
-/* Highlight for search */
-mark {
-    background-color: #fff176;
-    padding: 0 2px;
-}
-
-/* Footer */
-.main-footer {
-    background-color: #f0f4f8; /* Light grey */
-    color: #333;
-    padding: 40px 0;
-    margin-top: 60px;
-    font-size: 0.85rem;
-    border-top: 1px solid #ddd;
-}
-
-.main-footer a {
-    color: var(--primary-color);
-}
-
-.references-list {
-    background: white; /* White background for readability */
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* Printing */
-@media print {
-    /* DEFAULT / SHARED RULES */
-    .main-header, .progress-container, .nav-buttons, .intro-box, .search-wrapper {
-        display: none !important;
+/* Mobile responsive for accordion */
+@media (max-width: 600px) {
+    .accordion-content {
+        flex-direction: column;
+        align-items: flex-start;
     }
-    
-    /* HIDE Additional Info Block */
-    #additional-info-block {
-        display: none !important;
-    }
-
-    body {
-        background: white;
-    }
-
-    .step {
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-
-    /* PRINT SUMMARY MODE */
-    body.print-summary-mode #step-1,
-    body.print-summary-mode #step-2,
-    body.print-summary-mode #step-3,
-    body.print-summary-mode #step-4 {
-        display: none !important;
-    }
-    
-    body.print-summary-mode #step-5 {
-        display: block !important;
-    }
-    
-    /* HIDE FOOTER IN SUMMARY MODE */
-    body.print-summary-mode .main-footer {
-        display: none !important;
-    }
-
-    /* Ensure Print Header Info is visible */
-    #print-header-info {
-        display: block !important;
+    .accordion-visual {
+        flex: none;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 15px;
     }
 }
+
+
 /* Sliders */
 .slider-group {
     margin-bottom: 40px;
