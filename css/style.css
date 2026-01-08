@@ -245,13 +245,13 @@ h3 {
 }
 
 .success-block {
-    background-color: #e8f5e9;
+    background-color: #eef5fa; /* Light Blue */
     padding: 20px;
     border-radius: 8px;
 }
 
 .warning-block {
-    background-color: #fff3e0;
+    background-color: #fff5f5; /* Very Light Red */
     padding: 20px;
     border-radius: 8px;
 }
@@ -282,8 +282,13 @@ summary:after {
     content: '+';
     position: absolute;
     right: 20px;
+    top: 15px;
     font-size: 1.2rem;
     color: #777;
+}
+
+body.visual-mode .interactive-card summary:after {
+    display: none;
 }
 
 details[open] summary:after {
@@ -299,23 +304,21 @@ details ul {
     margin: 0;
 }
 
-/* New: Accordion Content Layout for Visual Mode */
+/* Accordion Content Layout for Visual Mode */
 .accordion-content {
     display: flex;
     flex-direction: row;
-    align-items: center; /* or flex-start */
+    align-items: center;
     gap: 20px;
     padding: 15px;
 }
 
-/* When in Text Mode, stack them or hide image (controlled by JS visual-mode classes) */
 body.text-mode .accordion-content {
     display: block;
 }
 
-/* Image container */
 .accordion-visual {
-    flex: 0 0 150px; /* Fixed width for the image container */
+    flex: 0 0 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -328,12 +331,10 @@ body.text-mode .accordion-content {
     object-fit: cover;
 }
 
-/* Text container */
 .accordion-text {
     flex: 1;
 }
 
-/* Mobile responsive for accordion */
 @media (max-width: 600px) {
     .accordion-content {
         flex-direction: column;
@@ -347,6 +348,113 @@ body.text-mode .accordion-content {
     }
 }
 
+/* --- Interactive Cards (Benefits/Risks) --- */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.interactive-card {
+    width: 250px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: transparent; /* Remove white background */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
+    overflow: visible; /* Prevent clipping */
+}
+
+.interactive-card summary {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.interactive-card[open] summary {
+    border-bottom: none;
+}
+
+.visual-card-header {
+    display: none;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent; /* Remove white background */
+    transition: transform 0.2s;
+}
+
+.visual-card-header:hover {
+    transform: translateY(-5px);
+}
+
+.visual-card-header img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.card-plus-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.interactive-card[open] .card-plus-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(45deg);
+}
+
+.text-card-header {
+    display: block;
+    padding: 15px;
+    background: white; /* Keep white for text bars for contrast */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-content {
+    padding: 10px 0;
+    background: transparent; /* Remove white background */
+    border: none; /* Remove border */
+    border-top: none;
+    border-radius: 0;
+    margin-top: 0;
+}
+
+body.visual-mode .visual-card-header {
+    display: block;
+}
+body.visual-mode .text-card-header {
+    display: none;
+}
+body.text-mode .visual-card-header {
+    display: none;
+}
+body.text-mode .text-card-header {
+    display: flex;
+}
 
 /* Sliders */
 .slider-group {
@@ -368,14 +476,13 @@ body.text-mode .accordion-content {
     flex-direction: column;
     align-items: center;
     padding-bottom: 10px;
-    min-height: 30px; /* Ensure space */
+    min-height: 30px;
 }
 
-/* 1. The Gray Track (Bottom Layer) */
 .slider-wrapper::before {
     content: '';
     position: absolute;
-    top: 10px; /* Match input margin/position */
+    top: 10px;
     left: 0;
     width: 100%;
     height: 8px;
@@ -384,20 +491,18 @@ body.text-mode .accordion-content {
     z-index: 0;
 }
 
-/* 2. The Ticks (Middle Layer) */
 .ticks-container {
     position: absolute;
-    top: 10px; /* Match track top */
+    top: 10px;
     width: 100%;
-    height: 8px; /* Match track height */
-    z-index: 1; /* Above track, below input */
+    height: 8px;
+    z-index: 1;
     pointer-events: none;
 }
 
-/* Tick Marks */
 .tick-mark-25, .tick-mark-50, .tick-mark-75 {
     position: absolute;
-    top: -2px; /* Extend above track */
+    top: -2px;
     width: 2px;
     height: 160%;
     border-radius: 999px;
@@ -408,20 +513,18 @@ body.text-mode .accordion-content {
 .tick-mark-50 { left: 50%; }
 .tick-mark-75 { left: 75%; }
 
-/* 3. The Input Range (Top Layer - Transparent Track, Visible Thumb) */
 .value-slider {
     width: 100%;
-    -webkit-appearance: none; /* Override default CSS styles */
+    -webkit-appearance: none;
     appearance: none;
-    background: transparent; /* Make track transparent so we see ::before and ticks */
-    margin-top: 10px; /* Align with track/ticks */
-    z-index: 2; /* Top layer */
+    background: transparent;
+    margin-top: 10px;
+    z-index: 2;
     position: relative;
-    height: 8px; /* Match track height for alignment */
+    height: 8px;
     cursor: pointer;
 }
 
-/* Thumb Styles */
 .value-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -431,7 +534,7 @@ body.text-mode .accordion-content {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin-top: -8px; /* Center thumb vertically on the 8px track */
+    margin-top: -8px;
     position: relative;
     z-index: 3;
 }
@@ -447,7 +550,7 @@ body.text-mode .accordion-content {
     position: relative;
     z-index: 3;
 }
-/* Toggle Switch */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -461,7 +564,6 @@ body.text-mode .accordion-content {
   height: 0;
 }
 
-/* Slider Track */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -469,12 +571,11 @@ body.text-mode .accordion-content {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc; /* Default (Unchecked/Text) Color - Grey */
+  background-color: #ccc;
   transition: .4s;
   border-radius: 20px;
 }
 
-/* Slider Thumb */
 .slider-thumb {
   position: absolute;
   content: "";
@@ -487,9 +588,8 @@ body.text-mode .accordion-content {
   border-radius: 50%;
 }
 
-/* Checked State (Visual Mode) */
 .switch input:checked + .slider {
-  background-color: #2196F3; /* Blue when checked - using standard blue, can use var(--primary-color) if available */
+  background-color: #2196F3;
 }
 
 .switch input:focus + .slider {
@@ -500,17 +600,12 @@ body.text-mode .accordion-content {
   transform: translateX(20px);
 }
 
-/* Visual Mode Logic */
-/* Default is Visual Mode (checked) based on HTML structure, but JS will control classes */
-/* If body has 'text-mode', show text, hide visual */
 body.text-mode .visual-mode-only {
     display: none !important;
 }
 body.text-mode .text-mode-only {
     display: block !important;
 }
-
-/* If body has 'visual-mode' (default), show visual, hide text */
 body.visual-mode .text-mode-only {
     display: none !important;
 }
