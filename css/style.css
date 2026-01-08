@@ -561,42 +561,104 @@ body.text-mode .text-card-header {
 .label-left { text-align: right; }
 .label-right { text-align: left; }
 
-/* Quiz */
-.quiz-question {
+/* Quiz & Decision Card Styles */
+.quiz-question, .decision-card {
     background: white;
     padding: 25px;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 25px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.quiz-question .question-text {
+.quiz-question .question-text, .decision-card h3 {
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 0;
 }
 
-.quiz-question label {
+/* Radio Option Styling (Cards) */
+.quiz-question label, .radio-card, .radio-group-vertical label {
     display: block;
     margin: 10px 0;
     cursor: pointer;
     padding: 12px 15px;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    background-color: #f9f9f9;
-    transition: all 0.2s;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: #fcfcfc;
+    transition: all 0.2s ease;
+    text-align: left;
 }
 
-.quiz-question label:hover {
-    background: #eee;
-    border-color: #ccc;
+.quiz-question label:hover, .radio-card:hover, .radio-group-vertical label:hover {
+    background: #f0f8ff;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.quiz-question label input {
-    margin-right: 10px;
+.radio-card input, .quiz-question label input, .radio-group-vertical label input {
+    margin-right: 12px;
 }
 
+/* Horizontal Radio Groups */
+.radio-group-horizontal {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.radio-group-horizontal .radio-card {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.radio-group-horizontal .radio-card input {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+/* Textarea / Input Formatting */
+.text-input-group {
+    margin-top: 20px;
+}
+
+.text-input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background-color: #fdfdfd;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+    background-color: white;
+}
+
+/* Quiz Feedback */
 .feedback {
     margin-top: 15px;
     padding: 12px;
@@ -621,6 +683,7 @@ body.text-mode .text-card-header {
 }
 
 
+/* Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -744,3 +807,29 @@ body.visual-mode .visual-mode-only {
     transform: none;
     box-shadow: none;
 }
+
+/* Summary Box */
+.copy-box {
+    background: #f4f4f4;
+    padding: 20px;
+    border: 2px dashed #999;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.copy-box h4 {
+    margin-top: 0;
+    color: #444;
+}
+
+/* References Padding */
+.references-list {
+    background: white;
+    padding: 30px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    line-height: 1.8;
+}
+

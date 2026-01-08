@@ -42,7 +42,28 @@
         <div class="intro-box" style="margin-bottom: 30px; margin-top: 30px;">
             <h3>Should AI Be Involved In My Medical Care?</h3>
             <p>Artificial intelligence, or AI, is increasingly used in healthcare. It helps medical professionals with note-taking, decision-making, and treatment planning. While AI can be helpful, it can also make mistakes, provide incomplete responses, or have biases. For this reason, it is important for you to know when and how it is being used in your care.</p>
-            <p>You have the right to understand how AI might affect your health and to decide if you want it to be part of your care and to what extent. This tool will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.</p>
+            <p>You have the right to understand how AI might affect your health and to decide if you want it to be part of your care and to what extent. This tool will take ~10 minutes to complete and will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.</p>
+        </div>
+
+        <div class="content-block">
+            <details>
+                <summary><strong>How to Use This Tool</strong></summary>
+                <div style="padding: 15px;">
+                    <ol>
+                        <li><strong>Follow the 5 steps in order:</strong>
+                            <ul>
+                                <li>Learn the facts about AI in healthcare.</li>
+                                <li>Show your values using the sliders.</li>
+                                <li>Quiz yourself to check understanding.</li>
+                                <li>Make your decision about AI use.</li>
+                                <li>Get your summary of all responses.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Save or print your summary.</strong><br>Download or print the summary so you can keep it for your records.</li>
+                        <li><strong>Use your summary in conversations.</strong><br>Share it with your care team, family, or anyone you choose. You can also use it as documentation to request full, limited, or no AI use in your care.</li>
+                    </ol>
+                </div>
+            </details>
         </div>
 
         <!-- Progress Bar -->
@@ -71,8 +92,8 @@
             </div>
 
             <div class="content-block">
-                <h3>What is AI?</h3>
-                <p>You have probably heard about artificial intelligence, or AI, especially as it becomes more common in healthcare. AI is a type of computer technology that looks at large amounts of data and predicts what is most likely to happen next. It does not think or feel like a human. Instead, it follows patterns it has learned from data to help make predictions or suggestions.</p>
+                <h3>What is AI and How Does it Work?</h3>
+                <p>AI (Artificial Intelligence) is a computer tool that looks at massive amounts of data to find patterns. It uses these patterns to make guesses or suggestions. Unlike a human, AI does not have feelings or thoughts.</p>
             </div>
 
             <div class="content-block">
@@ -195,7 +216,7 @@
                                 <img src="images/help docs.png" alt="Doctor with AI tools">
                                 <div class="card-plus-icon">+</div>
                             </div>
-                            <div class="text-card-header">Helps Doctors</div>
+                            <div class="text-card-header">Helps Doctors Do Their Jobs</div>
                         </summary>
                         <div class="card-content">
                             <ul>
@@ -331,7 +352,7 @@
 
             <div class="content-block">
                 <h3>Patient Rights and Choice</h3>
-                <p>You should be told when AI tools are used in your care (for example diagnostics, translation, note taking, image analysis, etc.), and you should have the choice to accept or decline their use. Healthcare providers must explain what the AI tools do and what risks and benefits there are so you can decide based on full information.</p>
+                <p>You should be told when AI tools are used in your care, and you should have the choice to accept or decline its use. Your doctor should explain the risks and benefits so you can make an informed choice. Even if a hospital uses AI, you can decide if you want it used for your health.</p>
             </div>
 
             <div class="content-block highlight-block">
@@ -513,12 +534,14 @@
                         </div>
                     </div>
                     
+                <div class="decision-card">
                     <div class="text-input-group">
                         <label for="other-reasons">My other reasons:</label>
                         <textarea id="other-reasons" rows="3" placeholder="Type your other reasons here..."></textarea>
                     </div>
-
                 </div>
+
+            </div>
 
             <div class="nav-buttons">
                 <button class="btn btn-secondary prev-step" onclick="prevStep(1)">&larr; Back</button>
@@ -534,64 +557,37 @@
             <form id="quiz-form">
                 <!-- Q1 -->
                 <div class="quiz-question" data-qid="1">
-                    <p class="question-text">1. What is artificial intelligence (AI) in medicine?</p>
-                    <label><input type="radio" name="q1" value="incorrect" data-feedback="Incorrect: AI does not replace doctors. It is a tool that helps them."> A type of robot that replaces doctors.</label>
-                    <label><input type="radio" name="q1" value="correct" data-feedback="Correct: AI is a computer system that learns from data and helps make suggestions or decisions."> A computer tool that can learn and make decisions.</label>
-                    <label><input type="radio" name="q1" value="unsure" data-feedback="Review the facts: AI is a tool to support doctors, not replace them."> I am not sure.</label>
+                    <p class="question-text">1. What is AI (Artificial Intelligence) in a doctor's office?</p>
+                    <label><input type="radio" name="q1" value="correct" data-feedback="Correct: AI looks at lots of data to help doctors make guesses, but the doctor still makes the final choice."> A computer tool that finds patterns to help your doctor.</label>
+                    <label><input type="radio" name="q1" value="incorrect" data-feedback="Incorrect: AI does not have feelings. It only follows instructions and patterns it has learned."> A robot that thinks and feels just like a human.</label>
+                    <label><input type="radio" name="q1" value="incorrect" data-feedback="Incorrect: AI is a helper for your medical team, not a replacement for them."> A machine that replaces your doctor or nurse.</label>
                     <div class="feedback hidden"></div>
                 </div>
 
                 <!-- Q2 -->
                 <div class="quiz-question" data-qid="2">
-                    <p class="question-text">2. Which of the following is your right when it comes to AI in your care?</p>
-                    <label><input type="radio" name="q2" value="correct" data-feedback="Correct: You have the right to accept, limit, or decline AI use in your care."> You can choose if and how AI is used in your care.</label>
-                    <label><input type="radio" name="q2" value="incorrect" data-feedback="Incorrect: You do not have to accept AI, and the choice is always yours."> You must agree to the use of AI if the hospital uses it.</label>
-                    <label><input type="radio" name="q2" value="incorrect" data-feedback="Incorrect: You can always ask questions to understand how AI is being used."> You cannot ask questions about AI.</label>
+                    <p class="question-text">2. What is one good thing (benefit) about using AI?</p>
+                    <label><input type="radio" name="q2" value="correct" data-feedback="Correct: AI is great at reading X-rays quickly and can help explain medical words in a way that is easy to understand."> It can help find health problems faster and explain things simply.</label>
+                    <label><input type="radio" name="q2" value="incorrect" data-feedback="Incorrect: AI can still make errors, especially if a health problem is rare or very complicated."> It makes sure there are never any mistakes in your care.</label>
+                    <label><input type="radio" name="q2" value="incorrect" data-feedback="Incorrect: AI only knows what it has been taught, so it doesn't know everything."> It knows everything about every patient perfectly.</label>
                     <div class="feedback hidden"></div>
                 </div>
 
                 <!-- Q3 -->
                 <div class="quiz-question" data-qid="3">
-                    <p class="question-text">3. Which is one common use of AI in healthcare?</p>
-                    <label><input type="radio" name="q3" value="incorrect" data-feedback="Incorrect: AI tools in medicine do not choose insurance plans."> Choosing your health insurance.</label>
-                    <label><input type="radio" name="q3" value="incorrect" data-feedback="Incorrect: AI does not decide whether you are allowed to see a doctor."> Deciding if you can see a doctor.</label>
-                    <label><input type="radio" name="q3" value="correct" data-feedback="Correct: AI can be used to help read and interpret medical images."> Reading medical images like X-rays or CT scans.</label>
+                    <p class="question-text">3. What is a risk or "downside" of using AI?</p>
+                    <label><input type="radio" name="q3" value="incorrect" data-feedback="Incorrect: AI can have 'bias.' This means it might not work as well for some groups of people as it does for others."> AI is always fair to every person who uses it.</label>
+                    <label><input type="radio" name="q3" value="correct" data-feedback="Correct: Sometimes AI gives an answer but cannot explain why, or the answer might be only partly right."> AI can sometimes give wrong answers or be hard to understand.</label>
+                    <label><input type="radio" name="q3" value="incorrect" data-feedback="Incorrect: Right now, there are no official rules that everyone must follow when making these tools."> The government checks every AI tool to make sure it is 100% safe.</label>
                     <div class="feedback hidden"></div>
                 </div>
 
                 <!-- Q4 -->
                 <div class="quiz-question" data-qid="4">
-                    <p class="question-text">4. Which is a benefit of using AI in medical care?</p>
-                    <label><input type="radio" name="q4" value="correct" data-feedback="Correct: AI can break down medical information so it is easier to understand."> It can help explain medical information in simple ways.</label>
-                    <label><input type="radio" name="q4" value="incorrect" data-feedback="Incorrect: AI supports doctors but cannot replace their judgment or care."> It replaces your doctor.</label>
-                    <label><input type="radio" name="q4" value="incorrect" data-feedback="Incorrect: AI can make errors, especially with complex or unusual cases."> It never makes mistakes.</label>
-                    <div class="feedback hidden"></div>
-                </div>
-
-                <!-- Q5 -->
-                <div class="quiz-question" data-qid="5">
-                    <p class="question-text">5. What is one of the risks of using AI?</p>
-                    <label><input type="radio" name="q5" value="incorrect" data-feedback="Incorrect: This is a benefit, not a risk."> It can help predict your health problems.</label>
-                    <label><input type="radio" name="q5" value="correct" data-feedback="Correct: AI can make mistakes or show bias based on the data it learned from."> It may give answers that are wrong or biased.</label>
-                    <label><input type="radio" name="q5" value="incorrect" data-feedback="Incorrect: AI cannot understand emotions or react the way humans do."> It always understands your or your doctor’s feelings.</label>
-                    <div class="feedback hidden"></div>
-                </div>
-
-                <!-- Q6 -->
-                <div class="quiz-question" data-qid="6">
-                    <p class="question-text">6. What do doctors still need to do when AI tools are used?</p>
-                    <label><input type="radio" name="q6" value="incorrect" data-feedback="Incorrect: Doctors must always make the final decisions in your care."> Let the AI make all final decisions.</label>
-                    <label><input type="radio" name="q6" value="incorrect" data-feedback="Incorrect: Doctors still review and use medical notes, even if AI helps write them."> Stop using medical notes.</label>
-                    <label><input type="radio" name="q6" value="correct" data-feedback="Correct: Doctors oversee AI tools and remain responsible for your care."> Check the AI’s work and make the final decisions themselves.</label>
-                    <div class="feedback hidden"></div>
-                </div>
-
-                <!-- Q7 -->
-                <div class="quiz-question" data-qid="7">
-                    <p class="question-text">7. If you do NOT want AI used for certain tasks, like note-taking or diagnosis, what can you do?</p>
-                    <label><input type="radio" name="q7" value="correct" data-feedback="Correct: You can choose to limit or decline AI for specific tasks."> You can request that AI not be used for those parts of your care.</label>
-                    <label><input type="radio" name="q7" value="incorrect" data-feedback="Incorrect: You do not have to accept AI use if it is being comfortable with it."> You must accept full AI use if it is being offered.</label>
-                    <label><input type="radio" name="q7" value="incorrect" data-feedback="Incorrect: You always have the right to make choices about AI use in your care."> You cannot choose.</label>
+                    <p class="question-text">4. What are your rights as a patient?</p>
+                    <label><input type="radio" name="q4" value="incorrect" data-feedback="Incorrect: You have the right to ask questions and say 'no' if you are not comfortable."> You have to use AI if the hospital tells you to.</label>
+                    <label><input type="radio" name="q4" value="correct" data-feedback="Correct: You can say 'yes' to all AI, 'no' to all AI, or only use it for some things, like taking notes."> You can choose how much AI is used in your care.</label>
+                    <label><input type="radio" name="q4" value="incorrect" data-feedback="Incorrect: You have the right to know when and how AI is being used to help with your health."> Doctors do not have to tell you if they are using AI.</label>
                     <div class="feedback hidden"></div>
                 </div>
             </form>
@@ -612,54 +608,64 @@
             <p>Now that you’ve learned what AI is, how it’s used in medicine, and its risks and benefits, you might have a better idea of how you feel about it being used in your care. How do you feel about it right now?</p>
             
             <div class="decision-form">
-                <h3>Comfort Level</h3>
-                <div class="radio-group-horizontal">
-                    <label class="radio-card">
-                        <input type="radio" name="comfort" value="Not comfortable">
-                        <span>Not comfortable with AI use in my care.</span>
-                    </label>
-                    <label class="radio-card">
-                        <input type="radio" name="comfort" value="Comfortable with some">
-                        <span>Comfortable with some AI use, but still have a lot of concerns.</span>
-                    </label>
-                    <label class="radio-card">
-                        <input type="radio" name="comfort" value="Very comfortable">
-                        <span>Very comfortable with AI use in my care.</span>
-                    </label>
+                <div class="decision-card">
+                    <h3>Comfort Level</h3>
+                    <div class="radio-group-horizontal">
+                        <label class="radio-card">
+                            <input type="radio" name="comfort" value="Not comfortable">
+                            <span>Not comfortable with AI use in my care.</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="comfort" value="Comfortable with some">
+                            <span>Comfortable with some AI use, but still have a lot of concerns.</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="comfort" value="Very comfortable">
+                            <span>Very comfortable with AI use in my care.</span>
+                        </label>
+                    </div>
                 </div>
 
-                <div class="text-input-group">
-                    <label for="decision-details">Details about your decision:</label>
-                    <textarea id="decision-details" rows="3" placeholder="Type details about your decision here if needed..."></textarea>
+                <div class="decision-card">
+                    <div class="text-input-group">
+                        <label for="decision-details">Details about your decision:</label>
+                        <textarea id="decision-details" rows="3" placeholder="Type details about your decision here if needed..."></textarea>
+                    </div>
                 </div>
 
-                <h3>Certainty</h3>
-                <p>How sure do you feel about your decision right now?</p>
-                <div class="radio-group-horizontal">
-                    <label class="radio-card">
-                        <input type="radio" name="certainty" value="Not sure at all">
-                        <span>Not sure at all.</span>
-                    </label>
-                    <label class="radio-card">
-                        <input type="radio" name="certainty" value="Somewhat sure">
-                        <span>Somewhat sure.</span>
-                    </label>
-                    <label class="radio-card">
-                        <input type="radio" name="certainty" value="Very sure">
-                        <span>Very sure.</span>
-                    </label>
+                <div class="decision-card">
+                    <h3>Certainty</h3>
+                    <p>How sure do you feel about your decision right now?</p>
+                    <div class="radio-group-horizontal">
+                        <label class="radio-card">
+                            <input type="radio" name="certainty" value="Not sure at all">
+                            <span>Not sure at all.</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="certainty" value="Somewhat sure">
+                            <span>Somewhat sure.</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="certainty" value="Very sure">
+                            <span>Very sure.</span>
+                        </label>
+                    </div>
                 </div>
 
-                <h3>Which of the following applies to you right now?</h3>
-                <div class="radio-group-vertical">
-                    <label><input type="radio" name="next_steps" value="ready"> I am confident in my decision and am ready to take action.</label>
-                    <label><input type="radio" name="next_steps" value="discuss"> I want to discuss options with others.</label>
-                    <label><input type="radio" name="next_steps" value="learn"> I do not fully understand my options, and want to learn more.</label>
+                <div class="decision-card">
+                    <h3>Which of the following applies to you right now?</h3>
+                    <div class="radio-group-vertical">
+                        <label><input type="radio" name="next_steps" value="ready"> I am confident in my decision and am ready to take action.</label>
+                        <label><input type="radio" name="next_steps" value="discuss"> I want to discuss options with others.</label>
+                        <label><input type="radio" name="next_steps" value="learn"> I do not fully understand my options, and want to learn more.</label>
+                    </div>
                 </div>
 
-                <div class="text-input-group">
-                    <label for="concerns-list">Your thoughts, questions, or concerns:</label>
-                    <textarea id="concerns-list" rows="3" placeholder="Type your thoughts, questions, or concerns here..."></textarea>
+                <div class="decision-card">
+                    <div class="text-input-group">
+                        <label for="concerns-list">Your thoughts, questions, or concerns:</label>
+                        <textarea id="concerns-list" rows="3" placeholder="Type your thoughts, questions, or concerns here..."></textarea>
+                    </div>
                 </div>
             </div>
 
@@ -740,9 +746,9 @@
         <!-- Footer / References -->
         <footer class="main-footer">
             <div class="footer-content">
-                <p><strong>Developed by:</strong> Marharyta Krylova, BS | <strong>Last Updated:</strong> 12/11/2025</p>
+                <p><strong>Developed by:</strong> Marharyta Krylova, BS | <strong>Last Updated:</strong> 01/08/2025</p>
                 <p><strong>Next Update:</strong> Annually or when new developments become available.</p>
-                <p><strong>Data Usage Statement:</strong> This tool does not collect, store, or transmit any personal data. All inputs are local to your session.</p>
+                <p><strong>Data Usage Statement:</strong> This patient decision aid does not collect, store, or transmit any personal or health information. All inputs are used solely in real time to support the patient’s decision-making process. Once the patient finishes using the tool, all information is immediately deleted and cannot be retrieved or linked back to the user in any way.</p>
                 <details>
                     <summary>View References & Disclaimers</summary>
                     <div class="references-list">

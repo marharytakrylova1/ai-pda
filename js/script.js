@@ -264,29 +264,40 @@ function generateSummary() {
     reviewList.innerHTML = '';
     reviewSection.classList.add('hidden');
 
-    // Mapping Questions to "Fact Statements"
+    // Mapping Questions to "Fact Statements" from PDF
     const factsMap = {
-        1: "AI is a computer tool that learns from information and helps doctors make decisions. It does not replace doctors, however, it supports them.",
-        2: "You have a choice in how AI is used in your care. You can agree to limit, or say no to AI, and you can always ask questions.",
-        3: "AI has a lot of uses in healthcare, some of which include reading medical images and helping doctors in finding medical problems.",
-        4: "AI can help explain medical information to patients in simple and easy-to-understand ways.",
-        5: "AI can sometimes give answers that are wrong or unfair because it learns from the data it is given.",
-        6: "Doctors must always check the AI’s work and make the final decisions about your care. The doctor stays in charge, not AI.",
-        7: "You can ask your care team to not use AI for certain parts of your care."
+        1: [
+            "AI is a computer tool that learns from information and helps doctors make decisions. It does not replace doctors, however, it supports them.",
+            "Doctors must always check the AI’s work and make the final decisions about your care. The doctor stays in charge, not AI."
+        ],
+        2: [
+            "AI has a lot of uses in healthcare, some of which include reading medical images and helping doctors in finding medical problems.",
+            "AI can help explain medical information to patients in simple and easy-to-understand ways."
+        ],
+        3: [
+            "AI can sometimes give answers that are wrong or unfair because it learns from the data it is given."
+        ],
+        4: [
+            "You have a choice in how AI is used in your care. You can agree to limit, or say no to AI, and you can always ask questions.",
+            "You can ask your care team to not use AI for certain parts of your care."
+        ]
     };
 
     let needsReview = false;
 
-    for (let i = 1; i <= 7; i++) {
-        const li = document.createElement('li');
-        li.textContent = factsMap[i];
-        
-        if (quizResults[i]) {
-            factsList.appendChild(li);
-        } else {
-            reviewList.appendChild(li);
-            needsReview = true;
-        }
+    for (let i = 1; i <= 4; i++) {
+        const statements = factsMap[i];
+        statements.forEach(stmt => {
+            const li = document.createElement('li');
+            li.textContent = stmt;
+            
+            if (quizResults[i]) {
+                factsList.appendChild(li);
+            } else {
+                reviewList.appendChild(li);
+                needsReview = true;
+            }
+        });
     }
 
     if (needsReview) {
@@ -316,9 +327,9 @@ function generateSummary() {
     // 4. Next Steps
     const nextSteps = document.querySelector('input[name="next_steps"]:checked');
     const nextStepsTextMap = {
-        'ready': "I am confident in my decision and am ready to take action.",
-        'discuss': "I want to discuss options with others.",
-        'learn': "I do not fully understand my options, and want to learn more."
+        'ready': "You feel sure about your choice and are ready to request adjustments around AI use in your care.",
+        'discuss': "You feel unsure and want to talk with someone before deciding.",
+        'learn': "You said you don’t fully understand your choices yet and want more information."
     };
     document.getElementById('summary-next-steps-text').textContent = nextSteps ? nextStepsTextMap[nextSteps.value] : "";
 
