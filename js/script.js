@@ -408,3 +408,11 @@ function toggleVisualMode() {
 document.addEventListener('DOMContentLoaded', () => {
     toggleVisualMode();
 });
+
+// Feedback Popup Logic
+function closeFeedbackPopup() {
+    const popup = document.getElementById('feedback-popup');
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}

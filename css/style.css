@@ -833,3 +833,45 @@ body.visual-mode .visual-mode-only {
     line-height: 1.8;
 }
 
+/* Feedback Popup */
+.feedback-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.feedback-popup:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.feedback-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.feedback-popup .close-btn {
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    font-weight: 300;
+}
+
+.feedback-popup .close-btn:hover {
+    opacity: 1;
+}
