@@ -22,11 +22,13 @@ function showStep(stepNumber) {
     });
 
     // Scroll to top
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 }
 
 function nextStep(stepNumber) {
     showStep(stepNumber);
+    // User requested to stay at current scroll position
+    // window.scrollTo(0, 0); 
 }
 
 function prevStep(stepNumber) {
