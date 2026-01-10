@@ -1,186 +1,102 @@
-Should AI Be Involved In My Medical Care?
-Artificial intelligence, or AI, is a tool that is seeing increased use in healthcare to help medical professionals take notes, make decisions, plan treatments, and more. While AI can be helpful, it is not perfect and it’s important for you to know when and how it is being used in your care.
+Should AI Be Involved In My Medical Care? 
+Artificial intelligence, or AI, is increasingly used in healthcare. It helps medical professionals with note-taking, decision-making, and treatment planning. While AI can be helpful, it can also make mistakes, provide incomplete responses, or have biases, .aFor this reason, it is important for you to know when and how it is being used in your care.
 
-You have the right to understand how AI might affect your health and to decide whether or not you want it to be part of your care. This tool will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.
+You have the right to understand how AI might affect your health and to decide if you want it to be part of your care and to what extent. This tool will take ~10 minutes to complete and will help you learn the facts, think about what matters most to you, and make choices that feel right for you in different situations.
 
-How to Use This Tool:
-1. Follow the 5 steps in order:
-○ Learn the facts about AI in healthcare.
-○ Show your values using the sliders.
-○ Quiz yourself to check understanding.
-○ Make your decision about AI use.
-○ Get your summary of all responses.
-2. Save or print your summary.
-Download or print the summary so you can keep it for your records.
-3. Use your summary in conversations.
-Share it with your care team, family, or anyone you choose.
-You can also use it as documentation to request full, limited, or no AI use in your care.
+How to Use This Tool (this should be a dropdown with steps) :
+Follow the 5 steps in order:
+Learn the facts about AI in healthcare.
+Show your values using the sliders.
+Quiz yourself to check understanding.
+Make your decision about AI use.
+Get your summary of all responses.
+Save or print your summary.
+ Download or print the summary so you can keep it for your records.
+Use your summary in conversations.
+ Share it with your care team, family, or anyone you choose.
+ You can also use it as documentation to request full, limited, or no AI use in your care.
+1. Get The Facts 
+Your Choices
+Agree to AI Use: Allow AI to be used for all your care.
+Pick and Choose:Allow AI for some things (like taking notes), but not others.
+Deny AI Use: Do not allow AI to be used at all.
 
-1. Get The Facts
-Your Options
-1) Agree to the use of AI in your medical care in full.
-2) Request that AI tools are not used for certain aspects of your care (ex: taking notes, diagnostic help, etc).
-3) Deny AI use in your care.
+Knowing what you want helps you stay in control of your care. Your doctor should explain the risks and benefits so you can make a smart choice. Even if a hospital uses AI, you can still decide if you want it used for your health.23 
 
-Some healthcare facilities let patients choose when and how AI is used in their care, but not all do. Knowing your options and how you feel about AI can help you avoid situations where tools you don’t want are used without you knowing.
 
-What is AI?
-You have probably heard about artificial intelligence, or AI, especially as it becomes more common in healthcare. AI is a type of computer technology that can learn and make decisions like a human. AI allows computers to do things that would otherwise need the human brain.
+What is AI and How Does it Work?
+AI (Artificial Intelligence) is a computer tool that looks at large amounts of data to find patterns. It uses these patterns to make guesses or suggestions. Unlike a human, AI does not have feelings or thoughts.1
 
-How Do AI Tools Work?
-AI tools use computer programs called algorithms to find patterns in large amounts of data. They are trained on this information and learn from it to make predictions and suggestions. AI developers follow six general steps when creating AI:
+AI developers follow six general steps when creating AI: 
 1) decide what AI should do,
-2) gather information the AI will learn from,
-3) teach the computer to find patterns in the data,
-4) check if the tool works well,
-5) put AI into real use to help people,
-6) keep checking the tool and make updates over time.
+2) gather information the AI will learn from, 
+3) teach the computer to find patterns in the data, 
+4) check if the tool works well, 
+5) put AI into real use to help people, 
+6) keep checking the tool and make updates over time. 
+Although these are the best practices for developing AI tools, there are no laws or regulations to
+make sure these steps are followed. 
 
 Common Uses of AI in Medicine
-AI has been used in healthcare more and more since 2017. Below are some common ways it helps doctors and patients today:
-1. Helping doctors find and monitor health problems
-- Detect early signs of disease from lab results or medical images.
-- Help read X-rays, CT scans, MRIs, heart tests, and other imaging results to spot issues faster.
-2. Supporting diagnosis and treatment decisions
-- Suggest possible diagnoses based on medical information.
-- Offer treatment options that follow medical recommendations.
-- Predict health risks, like complications, to help doctors plan the best care.
-3. Making medical notes and visit summaries
-- Turn doctors’ or patients’ speech into written visit summaries.
-- Write drafts of clinical notes and hospital discharge summaries.
-- Organize and update patient medical records more quickly.
-4. Reducing paperwork and administrative work
-- Suggest correct billing and insurance codes.
-- Help order lab tests and/or medications more efficiently.
-- Decrease time spent on forms so doctors can focus more on patients.
-5. Helping patients stay organized and involved in their care
-- Send appointment reminders and follow-up messages.
-- Collect pre-visit information through virtual assistants or online forms.
-- Translation of medical information for non-English speakers.
-- Provide simple explanations or instructions to patients.
-- Help patients manage medications and track symptoms at home.
+AI is being used more often in healthcare.17 Here are some ways it helps doctors and patients right now: 
+Helping doctors find and track health problems 
+Spot early signs of sickness in lab tests or medical pictures.3,4
+Read X-rays, CT scans, and other images to find issues faster.4,5
+Supporting diagnosis and treatment choices
+Suggest what might be wrong based on your health information.4
+Offer treatment options that follow medical recommendations.4,6
+Predict health risks, like complications, to help doctors plan the best care.6 
+Making medical notes and visit summaries 
+Turn doctors’ or patients’ words into written visit summaries.7–9
+Write drafts of notes for when you leave the hospital.10,11 
+Organize and update medical records quickly.10,12 
+Reducing paperwork and administrative work 
+Help pick the right billing and insurance codes.13 
+Order tests and medicine faster..14 
+Decrease time spent on forms so doctors can focus more on patients.15 
+Helping patients stay organized and involved in their care 
+Send appointment reminders and collect your information before your visit. 16, 17 
+Translate medical info into other languages.18 
+Give simple explanations or instructions to patients.19,20 
 
-Benefits of AI
+Benefits of AI22 
 Helps Doctors Do Their Jobs
-- Gives clear and organized answers
-- Helps doctors think through medical problems
-- Can help with diagnosing illnesses with
-- Works well for reading medical images, like X-rays
-- Can reduce human-error mistakes
+Helps doctors think through medical problems.
+Can help with diagnosing illnesses. 
+Works well for reading medical images, like X-rays.
+Can decrease human-error mistakes.
 Helps Patients
-- Explains medical information in simple ways
-- Makes it easier for doctors and patients to talk
-- Can help with many languages
-- Supports more personalized care
+Explains medical information in simple ways.
+Makes it easier for doctors and patients to talk.
+Can help with many languages.
+Supports more personalized care.
 Saves Time and Energy
-- Helps with writing medical notes
-- Makes reports, like radiology reports, easier to read
-- Helps clinics run more smoothly
-- Can save staff time and hospital resources
+Helps with writing medical notes.
+Makes reports, like radiology reports, easier to read,
+Helps clinics run more smoothly.
+Can save staff time and hospital resources.
 
-Potential Harms and Risks of AI
+Potential Harms and Risks of AI22
 Accuracy Problems
-- AI learns from data, which can include bias
-- May not work well for rare or complex cases
-- Can give answers that are partly wrong or incomplete
-- Gets less accurate with harder questions
-- Accuracy levels can be inconsistent
+AI learns from data, which can include bias.
+Might not work well for rare or difficult cases.
+Can give answers that are partly wrong or incomplete.
+Gets less accurate with harder questions.
 Missing Human Qualities
-- Does not understand feelings
-- Could lead to less human involvement if overused
-- Still needs doctors to check its work
-Technology Challenges
-- Sometimes it’s hard to know how AI makes decisions (“black box”)
-- Quality of answers can change from case to case
-- Hard to fit it smoothly into busy health systems
+Does not understand feelings.
+Could lead to less human involvement if overused.
+Can lead to overreliance if medical professionals assume it is correct.
+Still needs doctors to check its work.
 Fairness and Access
-- Could make gaps worse if some groups have less access to technology
-- Some groups may not be well-represented in the data AI learns from
+AI might make healthcare unfair for some people. It could make things worse for those who do not have easy access to technology. 
+If that data leaves out certain groups of people, the AI might not work well for everyone.
 Privacy and Legal Concerns
-- There are risks of hacking and data leaks
-- It is not always clear who is responsible if AI makes a mistake
+There are risks of hacking and data leaks.
+It is not always clear who is responsible if AI makes a mistake.
 
-Patient Rights and Choice
-You should be told when AI tools are used in your care (for example diagnostics, translation, note taking, image analysis, etc.), and you should have the choice to accept or decline their use. Healthcare providers must explain what the AI tools do and what risks and benefits there are so you can decide based on full information.
 
 Summary / Key Takeaways
-- AI tools help doctors by organizing information, detecting health problems, and saving time, but doctors still make final decisions.
-- AI has benefits, like faster results, simple explanations of medical information, support for non-English speakers, and more.
-- AI also has risks, such as possible mistakes, bias, or privacy concerns, so it is important to ask questions about the AI tools being used.
-- You have a right to choose if and how AI is used in your care. You can agree to full use, limited use, or none at all.
-
-2. Your Feelings
-Your personal comfort and priorities are just as important as the medical facts. Take a moment to think about what matters most to you, and use the sliders below to show how you feel about each statement. There are no right or wrong answers. This is about your own preferences.
-
-Detecting Medical Problems: I want AI to help find medical problems early because I value getting the fastest, most accurate care possible. OR I prefer only a human to check my tests and scans because I value personal review and human judgment.
-Diagnosis and Treatment Decisions: I want AI to help my doctor think through my diagnosis or treatment because I value having extra tools for safety and accuracy. OR I prefer my doctor to make all decisions without AI because I value human experience and trust their judgment most.
-Medical Notes and Visit Summaries: I am comfortable with AI helping write or organize my visit notes because I value clear and easy-to-read information. OR I want only a human to handle my notes because I value personal control over my medical information.
-Paperwork and Administrative Work: I want AI to help with forms, scheduling, and check-in because I value fast and easy visits. OR I prefer people to handle my paperwork because I value human interaction.
-Virtual Assistants: I want quick and easy access to information and am okay with using an AI assistant if it gives me that. OR I prefer not to use an AI assistant because I value personal guidance and feel more comfortable speaking to a real person.
-Privacy Concerns: I am okay with AI using my medical data if it can improve my care. OR I do not want any of my medical data to be used by AI.
-Technical Understanding: I want AI used even if I don’t fully understand how it works. OR I prefer only using tools I completely understand, even if AI could help.
-Efficiency: I value efficiency and AI tools can help make my care faster and easier. OR I would prefer slower care if it means less AI involvement.
-Bias: I care about fairness and think that AI can do a good job treating all patients fairly. OR I prefer humans making decisions when fairness is important.
-
-3. Quiz Yourself
-This short quiz is here to help you see how much you’ve understood so far. It is not a test and there are no right or wrong scores. Think of it as feedback to help you learn and feel more confident about the information you just reviewed.
-
-Check The Facts
-1. What is artificial intelligence (AI) in medicine?
-- A type of robot that replaces doctors.
-- A computer tool that can learn and make decisions.
-- I am not sure.
-2. Which of the following is your right when it comes to AI in your care?
-- You can choose if and how AI is used in your care.
-- You must agree to the use of AI if the hospital uses it.
-- You cannot ask questions about AI.
-3. Which is one common use of AI in healthcare?
-- Choosing your health insurance.
-- Deciding if you can see a doctor.
-- Reading medical images like X-rays or CT scans.
-4. Which is a benefit of using AI in medical care?
-- It can help explain medical information in simple ways.
-- It replaces your doctor.
-- It never makes mistakes.
-5. What is one of the risks of using AI?
-- It can help predict your health problems.
-- It may give answers that are wrong or biased.
-- It always understands your or your doctor’s feelings.
-6. What do doctors still need to do when AI tools are used?
-- Let the AI make all final decisions.
-- Stop using medical notes.
-- Check the AI’s work and make the final decisions themselves.
-7. If you do NOT want AI used for certain tasks, like note-taking or diagnosis, what can you do?
-- You can request that AI not be used for those parts of your care.
-- You must accept full AI use if it is being offered.
-- You cannot choose.
-
-4. Your Decision
-Now that you’ve learned what AI is, how it’s used in medicine, and its risks and benefits, you might have a better idea of how you feel about it being used in your care. How do you feel about it right now?
-Not comfortable with AI use in my care.
-Comfortable with some AI use, but still have a lot of concerns.
-Very comfortable with AI use in my care.
-
-Certainty
-How sure do you feel about your decision right now?
-Not sure at all. Somewhat sure. Very sure.
-
-5. Your Summary
-Information That You Understand
-1. AI is a computer tool that learns from information and helps doctors make decisions. It does not replace doctors, however, it supports them.
-2. You have a choice in how AI is used in your care. You can agree to limit, or say no to AI, and you can always ask questions.
-3. AI has a lot of uses in healthcare, some of which include reading medical images and helping doctors in finding medical problems.
-4. AI can help explain medical information to patients in simple and easy-to-understand ways.
-5. AI can sometimes give answers that are wrong or unfair because it learns from the data it is given.
-6. Doctors must always check the AI’s work and make the final decisions about your care. The doctor stays in charge, not AI.
-7. You can ask your care team to not use AI for certain parts of your care.
-
-Suggested wording to share with trusted persons or clinicians:
-“I completed a decision about AI use in my care. I would like [full / limited / no] AI use. Please see my summary for details and the specific tasks where I prefer AI [to be / not to be] used.”
-“I want to discuss how AI may be used in my care. My patient decision aid summary says I’m concerned about [...]; can you explain which tools you use, how they are used, and whether I can opt out of specific uses?”
-
-Funding: The development of this tool received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
-Data Usage Statement: This patient decision aid does not collect, store, or transmit any personal or health information.
-Evidence Rigor Statement: The information in this tool was gathered through searches on Google Scholar and PubMed using key terms such as “patient decision aid for AI use,” “informed consent for AI in medical care,” “AI in healthcare,” and “patient attitudes toward AI.” Only peer-reviewed articles published in trusted journals and authored by qualified researchers were included.
-Quality of Scientific Evidence Statement: The information in this tool is based on peer-reviewed scientific articles and reputable academic sources.
-Conflict of Interest: The authors/developers of the tool report no conflicts of interest.
+AI tools help doctors by organizing information, detecting health problems, and saving time, but doctors still make final decisions. 
+AI has benefits, like faster results, simple explanations of medical information, support for non-English speakers, and more. 
+AI also has risks, such as possible mistakes, bias, or privacy concerns, so it is important to ask questions about the AI tools being used. 
+You have a right to choose if and how AI is used in your care. You can agree to full use, limited use, or none at all.
