@@ -156,6 +156,24 @@ function updateSliderPercent(slider) {
 function checkQuiz() {
     const form = document.getElementById('quiz-form');
     const questions = form.querySelectorAll('.quiz-question');
+    const errorMsg = document.getElementById('quiz-error');
+
+    // 1. Check if all questions are answered
+    let allAnswered = true;
+    questions.forEach(q => {
+        if (!q.querySelector('input:checked')) {
+            allAnswered = false;
+        }
+    });
+
+    if (!allAnswered) {
+        // Show error and stop
+        errorMsg.classList.remove('hidden');
+        return;
+    }
+
+    // 2. If all answered, hide error and proceed with feedback
+    errorMsg.classList.add('hidden');
 
     questions.forEach(q => {
         const qId = q.dataset.qid;
@@ -181,9 +199,6 @@ function checkQuiz() {
             } else {
                 feedbackEl.classList.add('incorrect');
             }
-        } else {
-            // Not answered
-            quizResults[qId] = false;
         }
     });
 
