@@ -822,6 +822,12 @@ body.visual-mode .visual-mode-only {
     color: #444;
 }
 
+/* Summary Blue Headings */
+.summary-section h4, 
+.summary-section p strong {
+    color: var(--primary-color);
+}
+
 /* References Padding */
 .references-list {
     background: white;
