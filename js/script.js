@@ -269,19 +269,16 @@ function generateSummary() {
     // Mapping Questions to "Fact Statements" from PDF
     const factsMap = {
         1: [
-            "AI is a computer tool that learns from information and helps doctors make decisions. It does not replace doctors, however, it supports them.",
-            "Doctors must always check the AI’s work and make the final decisions about your care. The doctor stays in charge, not AI."
+            "AI is a computer tool that looks for patterns in data to help doctors make decisions. It is not a robot with feelings, and it does not replace the doctor."
         ],
         2: [
-            "AI has a lot of uses in healthcare, some of which include reading medical images and helping doctors in finding medical problems.",
-            "AI can help explain medical information to patients in simple and easy-to-understand ways."
+            "AI can help doctors find health problems quickly, like reading X-rays faster. It can also explain difficult medical words in a way that is clear and easy to understand."
         ],
         3: [
-            "AI can sometimes give answers that are wrong or unfair because it learns from the data it is given."
+            "AI is not perfect and can sometimes make mistakes or give incomplete answers. It can also have bias, meaning it might not work as well for some groups of people."
         ],
         4: [
-            "You have a choice in how AI is used in your care. You can agree to limit, or say no to AI, and you can always ask questions.",
-            "You can ask your care team to not use AI for certain parts of your care."
+            "You have the right to know when AI is being used. You can choose to say 'yes' or 'no' to AI, or only use it for certain things like taking notes."
         ]
     };
 
@@ -329,9 +326,9 @@ function generateSummary() {
     // 4. Next Steps
     const nextSteps = document.querySelector('input[name="next_steps"]:checked');
     const nextStepsTextMap = {
-        'ready': "You feel sure about your choice and are ready to request adjustments around AI use in your care.",
-        'discuss': "You feel unsure and want to talk with someone before deciding.",
-        'learn': "You said you don’t fully understand your choices yet and want more information."
+        'ready': "Based on your answers, you feel sure about your choice and are ready to ask for changes in how AI is used in your care.",
+        'discuss': "Based on your answers, you feel unsure and want to talk to someone before making a decision.",
+        'learn': "Based on your answers, you do not fully understand your choices yet and want to learn more."
     };
     document.getElementById('summary-next-steps-text').textContent = nextSteps ? nextStepsTextMap[nextSteps.value] : "";
 
