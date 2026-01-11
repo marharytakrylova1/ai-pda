@@ -824,7 +824,7 @@ body.visual-mode .visual-mode-only {
 
 /* Summary Blue Headings */
 .summary-section h4, 
-.summary-section p strong {
+.summary-section strong {
     color: var(--primary-color);
 }
 
