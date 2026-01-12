@@ -74,7 +74,7 @@ body {
 }
 
 #search-btn {
-    height: 32px; /* Adjusted to match container min-height + padding/border approximations */
+    height: 36px; /* DO NOT CHANGE THIS VALUE FOR ANY REASON */
     padding: 0 12px;
     border: 1px solid var(--border-color);
     border-left: none;
@@ -534,7 +534,7 @@ body.text-mode .text-card-header {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin-top: -8px;
+    margin-top: -4px;
     position: relative;
     z-index: 3;
 }
