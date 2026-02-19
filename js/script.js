@@ -27,8 +27,11 @@ function showStep(stepNumber) {
 
 function nextStep(stepNumber) {
     showStep(stepNumber);
-    // User requested to stay at current scroll position
-    // window.scrollTo(0, 0); 
+    // Scroll to the progress bar (navigation menu)
+    const progressContainer = document.querySelector('.progress-container');
+    if (progressContainer) {
+        progressContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function prevStep(stepNumber) {
