@@ -178,6 +178,12 @@ function checkQuiz() {
     // 2. If all answered, hide error and proceed with feedback
     errorMsg.classList.add('hidden');
 
+    // Scroll to the progress bar so user can review answers
+    const progressContainer = document.querySelector('.progress-container');
+    if (progressContainer) {
+        progressContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     questions.forEach(q => {
         const qId = q.dataset.qid;
         const selected = q.querySelector('input:checked');
