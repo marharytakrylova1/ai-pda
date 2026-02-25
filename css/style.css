@@ -621,11 +621,6 @@ body.text-mode .text-card-header {
     margin-bottom: 10px;
 }
 
-/* Textarea / Input Formatting */
-.text-input-group {
-    margin-top: 20px;
-}
-
 .text-input-group label {
     display: block;
     font-weight: 600;
