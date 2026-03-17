@@ -963,30 +963,30 @@ body.visual-mode .visual-mode-only {
         padding: 8px 15px 15px 15px; /* Adjust top padding for text input boxes */
     }
 
-    /* Sliders Stack (Preserved & Compact) */
+    /* Sliders Side-by-Side on Mobile */
     .slider-container {
-        flex-direction: column;
-        gap: 5px;
-        align-items: stretch;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
         margin-bottom: 10px;
     }
 
     .slider-wrapper {
-        width: 100%;
-        padding: 0 10px;
+        width: auto;
+        flex: 1;
+        padding: 0;
         margin: 5px 0;
     }
 
     .label-left, .label-right {
-        flex: auto;
-        width: 100%;
-        text-align: center;
-        font-size: 0.8rem;
+        flex: 1;
+        width: auto;
+        font-size: 0.75rem;
         margin: 0;
     }
     
-    .label-left { order: -1; } /* Ensure left label is on top */
-    .label-right { order: 1; }  /* Right label on bottom */
+    .label-left { order: 0; text-align: right; }
+    .label-right { order: 0; text-align: left; }
 
     /* Radio Horizontal to Vertical */
     .radio-group-horizontal {
